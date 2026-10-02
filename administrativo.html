@@ -1,0 +1,1465 @@
+<!doctype html>
+
+<html lang="pt-BR">
+
+<head>
+
+```
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Administração | Expresso Certório</title>
+
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Bootstrap Icons -->
+<link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+<style>
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background: #F7F1E8;
+        color: #3E2723;
+        font-family: Georgia, "Times New Roman", serif;
+    }
+
+    /* ==============================
+       LAYOUT
+    ============================== */
+
+    .admin-container {
+        display: flex;
+        min-height: 100vh;
+    }
+
+    /* ==============================
+       MENU LATERAL
+    ============================== */
+
+    .sidebar {
+        width: 260px;
+        min-height: 100vh;
+        background: #3E2723;
+        color: #fff;
+        padding: 25px 18px;
+        position: fixed;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        z-index: 1000;
+    }
+
+    .logo-admin {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: #F5D6A1;
+        text-decoration: none;
+        font-size: 20px;
+        font-weight: bold;
+        padding: 10px;
+        margin-bottom: 35px;
+    }
+
+    .logo-admin i {
+        color: #D99A45;
+        font-size: 27px;
+    }
+
+    .menu-titulo {
+        color: #BCAAA4;
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        padding: 0 12px;
+        margin-bottom: 10px;
+    }
+
+    .menu-admin {
+        list-style: none;
+        padding: 0;
+    }
+
+    .menu-admin li {
+        margin-bottom: 6px;
+    }
+
+    .menu-admin a {
+        display: flex;
+        align-items: center;
+        gap: 13px;
+        color: #E8DCD2;
+        text-decoration: none;
+        padding: 13px 14px;
+        border-radius: 10px;
+        transition: .3s;
+        font-size: 15px;
+    }
+
+    .menu-admin a i {
+        font-size: 18px;
+    }
+
+    .menu-admin a:hover,
+    .menu-admin a.active {
+        background: #654438;
+        color: #F5D6A1;
+    }
+
+    .menu-admin a.active {
+        border-left: 4px solid #D99A45;
+    }
+
+    .sidebar-rodape {
+        position: absolute;
+        bottom: 25px;
+        left: 25px;
+        right: 25px;
+        color: #BCAAA4;
+        font-size: 12px;
+        border-top: 1px solid #654438;
+        padding-top: 15px;
+    }
+
+    /* ==============================
+       CONTEÚDO
+    ============================== */
+
+    .conteudo-admin {
+        margin-left: 260px;
+        width: calc(100% - 260px);
+        padding: 30px 35px;
+    }
+
+    /* ==============================
+       TOPO
+    ============================== */
+
+    .topo-admin {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 30px;
+    }
+
+    .topo-admin h1 {
+        font-size: 30px;
+        margin-bottom: 5px;
+    }
+
+    .topo-admin p {
+        color: #795548;
+        margin: 0;
+    }
+
+    .usuario-admin {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        background: #fff;
+        padding: 10px 15px;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(62, 39, 35, .08);
+    }
+
+    .usuario-icone {
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        background: #D99A45;
+        color: #3E2723;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+    }
+
+    .usuario-admin strong {
+        display: block;
+        font-size: 14px;
+    }
+
+    .usuario-admin span {
+        font-size: 12px;
+        color: #8D6E63;
+    }
+
+    /* ==============================
+       CARDS DE RESUMO
+    ============================== */
+
+    .estatisticas {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+        margin-bottom: 30px;
+    }
+
+    .estatistica {
+        background: #fff;
+        border-radius: 15px;
+        padding: 22px;
+        box-shadow: 0 5px 20px rgba(62, 39, 35, .07);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .estatistica-info span {
+        color: #8D6E63;
+        font-size: 13px;
+    }
+
+    .estatistica-info h2 {
+        margin: 7px 0 0;
+        font-size: 26px;
+        color: #3E2723;
+    }
+
+    .estatistica-info small {
+        color: #6D9B5B;
+        font-size: 12px;
+    }
+
+    .estatistica-icone {
+        width: 52px;
+        height: 52px;
+        border-radius: 13px;
+        background: #F5E4CA;
+        color: #9A642A;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 23px;
+    }
+
+    /* ==============================
+       GRID PRINCIPAL
+    ============================== */
+
+    .grid-admin {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 25px;
+    }
+
+    .painel {
+        background: #fff;
+        border-radius: 15px;
+        padding: 24px;
+        box-shadow: 0 5px 20px rgba(62, 39, 35, .07);
+        margin-bottom: 25px;
+    }
+
+    .painel-cabecalho {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .painel-cabecalho h2 {
+        font-size: 20px;
+        margin: 0;
+    }
+
+    .ver-todos {
+        color: #A66A2C;
+        text-decoration: none;
+        font-size: 13px;
+        font-weight: bold;
+    }
+
+    .ver-todos:hover {
+        color: #3E2723;
+    }
+
+    /* ==============================
+       TABELA DE PEDIDOS
+    ============================== */
+
+    .tabela-pedidos {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    .tabela-pedidos th {
+        text-align: left;
+        color: #8D6E63;
+        font-size: 12px;
+        text-transform: uppercase;
+        padding: 10px;
+        border-bottom: 1px solid #EDE3D8;
+    }
+
+    .tabela-pedidos td {
+        padding: 15px 10px;
+        border-bottom: 1px solid #F1EAE3;
+        font-size: 14px;
+    }
+
+    .pedido-cliente {
+        font-weight: bold;
+    }
+
+    .pedido-numero {
+        color: #A66A2C;
+        font-size: 12px;
+    }
+
+    .status {
+        display: inline-block;
+        padding: 6px 10px;
+        border-radius: 20px;
+        font-size: 11px;
+        font-weight: bold;
+    }
+
+    .status-pendente {
+        background: #FFF0CE;
+        color: #9A681E;
+    }
+
+    .status-preparo {
+        background: #E5EFFF;
+        color: #3E6B9C;
+    }
+
+    .status-pronto {
+        background: #E4F4DF;
+        color: #47763B;
+    }
+
+    .status-entregue {
+        background: #EDE7E2;
+        color: #6D5A52;
+    }
+
+    /* ==============================
+       PRODUTOS MAIS VENDIDOS
+    ============================== */
+
+    .produto-vendido {
+        display: flex;
+        align-items: center;
+        gap: 13px;
+        padding: 13px 0;
+        border-bottom: 1px solid #F1EAE3;
+    }
+
+    .produto-vendido:last-child {
+        border-bottom: none;
+    }
+
+    .produto-icon {
+        width: 43px;
+        height: 43px;
+        border-radius: 10px;
+        background: #F5E4CA;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #9A642A;
+        font-size: 18px;
+    }
+
+    .produto-vendido-info {
+        flex: 1;
+    }
+
+    .produto-vendido-info strong {
+        display: block;
+        font-size: 14px;
+    }
+
+    .produto-vendido-info span {
+        color: #8D6E63;
+        font-size: 12px;
+    }
+
+    .quantidade-vendida {
+        font-weight: bold;
+        color: #A66A2C;
+        font-size: 13px;
+    }
+
+    /* ==============================
+       AÇÕES RÁPIDAS
+    ============================== */
+
+    .acoes {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+    }
+
+    .acao {
+        text-decoration: none;
+        background: #FAF6F1;
+        border: 1px solid #E9DED2;
+        border-radius: 12px;
+        padding: 17px 12px;
+        text-align: center;
+        color: #3E2723;
+        transition: .3s;
+    }
+
+    .acao:hover {
+        background: #F5E4CA;
+        transform: translateY(-2px);
+    }
+
+    .acao i {
+        display: block;
+        color: #A66A2C;
+        font-size: 23px;
+        margin-bottom: 7px;
+    }
+
+    .acao span {
+        font-size: 12px;
+        font-weight: bold;
+    }
+
+    /* ==============================
+       BARRAS
+    ============================== */
+
+    .barra-item {
+        margin-bottom: 18px;
+    }
+
+    .barra-info {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 6px;
+        font-size: 13px;
+    }
+
+    .barra {
+        width: 100%;
+        height: 7px;
+        background: #EFE7DF;
+        border-radius: 20px;
+        overflow: hidden;
+    }
+
+    .barra span {
+        display: block;
+        height: 100%;
+        background: #D99A45;
+        border-radius: 20px;
+    }
+
+    /* ==============================
+       MOBILE
+    ============================== */
+
+    @media (max-width: 1100px) {
+
+        .estatisticas {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .grid-admin {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    @media (max-width: 768px) {
+
+        .sidebar {
+            width: 70px;
+            padding: 20px 10px;
+        }
+
+        .logo-admin {
+            justify-content: center;
+            font-size: 0;
+            margin-bottom: 30px;
+        }
+
+        .logo-admin i {
+            font-size: 26px;
+        }
+
+        .menu-titulo,
+        .menu-admin a span,
+        .sidebar-rodape {
+            display: none;
+        }
+
+        .menu-admin a {
+            justify-content: center;
+            padding: 14px 5px;
+        }
+
+        .menu-admin a i {
+            font-size: 20px;
+        }
+
+        .conteudo-admin {
+            margin-left: 70px;
+            width: calc(100% - 70px);
+            padding: 20px;
+        }
+
+        .topo-admin {
+            align-items: flex-start;
+        }
+
+        .topo-admin h1 {
+            font-size: 24px;
+        }
+
+        .usuario-admin {
+            padding: 7px;
+        }
+
+        .usuario-admin > div:last-child {
+            display: none;
+        }
+    }
+
+    @media (max-width: 600px) {
+
+        .estatisticas {
+            grid-template-columns: 1fr;
+        }
+
+        .estatistica {
+            padding: 18px;
+        }
+
+        .tabela-container {
+            overflow-x: auto;
+        }
+
+        .tabela-pedidos {
+            min-width: 650px;
+        }
+
+        .topo-admin p {
+            font-size: 13px;
+        }
+
+        .acoes {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+</style>
+```
+
+</head>
+
+<body>
+
+```
+<div class="admin-container">
+
+
+    <!-- =================================
+         MENU LATERAL
+    ================================== -->
+
+    <aside class="sidebar">
+
+        <a href="index.html" class="logo-admin">
+
+            <i class="bi bi-cup-hot-fill"></i>
+
+            <span>EXPRESSO CERTÓRIO</span>
+
+        </a>
+
+
+        <div class="menu-titulo">
+            Administração
+        </div>
+
+
+        <ul class="menu-admin">
+
+            <li>
+
+                <a href="#" class="active">
+
+                    <i class="bi bi-grid-1x2-fill"></i>
+
+                    <span>Dashboard</span>
+
+                </a>
+
+            </li>
+
+
+            <li>
+
+                <a href="#pedidos">
+
+                    <i class="bi bi-bag-check-fill"></i>
+
+                    <span>Pedidos</span>
+
+                </a>
+
+            </li>
+
+
+            <li>
+
+                <a href="#produtos">
+
+                    <i class="bi bi-cup-hot-fill"></i>
+
+                    <span>Produtos</span>
+
+                </a>
+
+            </li>
+
+
+            <li>
+
+                <a href="#clientes">
+
+                    <i class="bi bi-people-fill"></i>
+
+                    <span>Clientes</span>
+
+                </a>
+
+            </li>
+
+
+            <li>
+
+                <a href="#relatorios">
+
+                    <i class="bi bi-bar-chart-fill"></i>
+
+                    <span>Relatórios</span>
+
+                </a>
+
+            </li>
+
+
+            <li>
+
+                <a href="#configuracoes">
+
+                    <i class="bi bi-gear-fill"></i>
+
+                    <span>Configurações</span>
+
+                </a>
+
+            </li>
+
+        </ul>
+
+
+        <div class="sidebar-rodape">
+
+            <i class="bi bi-shield-check"></i>
+
+            Área administrativa
+
+        </div>
+
+    </aside>
+
+
+    <!-- =================================
+         CONTEÚDO
+    ================================== -->
+
+    <main class="conteudo-admin">
+
+
+        <!-- TOPO -->
+
+        <div class="topo-admin">
+
+            <div>
+
+                <h1>
+                    Dashboard
+                </h1>
+
+                <p>
+                    Bem-vindo ao painel do Expresso Certório.
+                </p>
+
+            </div>
+
+
+            <div class="usuario-admin">
+
+                <div class="usuario-icone">
+
+                    <i class="bi bi-person-fill"></i>
+
+                </div>
+
+                <div>
+
+                    <strong>
+                        Administrador
+                    </strong>
+
+                    <span>
+                        Acesso administrativo
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================
+             ESTATÍSTICAS
+        ================================== -->
+
+        <section class="estatisticas">
+
+
+            <div class="estatistica">
+
+                <div class="estatistica-info">
+
+                    <span>
+                        Vendas hoje
+                    </span>
+
+                    <h2>
+                        R$ 842,50
+                    </h2>
+
+                    <small>
+                        ↑ 12,5% hoje
+                    </small>
+
+                </div>
+
+                <div class="estatistica-icone">
+
+                    <i class="bi bi-currency-dollar"></i>
+
+                </div>
+
+            </div>
+
+
+            <div class="estatistica">
+
+                <div class="estatistica-info">
+
+                    <span>
+                        Pedidos hoje
+                    </span>
+
+                    <h2>
+                        48
+                    </h2>
+
+                    <small>
+                        ↑ 8 novos pedidos
+                    </small>
+
+                </div>
+
+                <div class="estatistica-icone">
+
+                    <i class="bi bi-bag-check-fill"></i>
+
+                </div>
+
+            </div>
+
+
+            <div class="estatistica">
+
+                <div class="estatistica-info">
+
+                    <span>
+                        Produtos
+                    </span>
+
+                    <h2>
+                        18
+                    </h2>
+
+                    <small>
+                        3 categorias
+                    </small>
+
+                </div>
+
+                <div class="estatistica-icone">
+
+                    <i class="bi bi-cup-hot-fill"></i>
+
+                </div>
+
+            </div>
+
+
+            <div class="estatistica">
+
+                <div class="estatistica-info">
+
+                    <span>
+                        Clientes
+                    </span>
+
+                    <h2>
+                        126
+                    </h2>
+
+                    <small>
+                        ↑ 14 este mês
+                    </small>
+
+                </div>
+
+                <div class="estatistica-icone">
+
+                    <i class="bi bi-people-fill"></i>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================
+             CONTEÚDO PRINCIPAL
+        ================================== -->
+
+        <div class="grid-admin">
+
+
+            <!-- PEDIDOS -->
+
+            <div>
+
+                <section class="painel" id="pedidos">
+
+                    <div class="painel-cabecalho">
+
+                        <h2>
+                            Pedidos recentes
+                        </h2>
+
+                        <a href="#" class="ver-todos">
+                            Ver todos
+                        </a>
+
+                    </div>
+
+
+                    <div class="tabela-container">
+
+                        <table class="tabela-pedidos">
+
+                            <thead>
+
+                                <tr>
+
+                                    <th>
+                                        Pedido
+                                    </th>
+
+                                    <th>
+                                        Cliente
+                                    </th>
+
+                                    <th>
+                                        Total
+                                    </th>
+
+                                    <th>
+                                        Status
+                                    </th>
+
+                                </tr>
+
+                            </thead>
+
+
+                            <tbody>
+
+
+                                <tr>
+
+                                    <td>
+
+                                        <span class="pedido-numero">
+                                            #00125
+                                        </span>
+
+                                    </td>
+
+                                    <td>
+
+                                        <span class="pedido-cliente">
+                                            Maria Silva
+                                        </span>
+
+                                    </td>
+
+                                    <td>
+                                        R$ 32,00
+                                    </td>
+
+                                    <td>
+
+                                        <span class="status status-pronto">
+                                            Pronto
+                                        </span>
+
+                                    </td>
+
+                                </tr>
+
+
+                                <tr>
+
+                                    <td>
+
+                                        <span class="pedido-numero">
+                                            #00124
+                                        </span>
+
+                                    </td>
+
+                                    <td>
+
+                                        <span class="pedido-cliente">
+                                            João Santos
+                                        </span>
+
+                                    </td>
+
+                                    <td>
+                                        R$ 46,00
+                                    </td>
+
+                                    <td>
+
+                                        <span class="status status-preparo">
+                                            Em preparo
+                                        </span>
+
+                                    </td>
+
+                                </tr>
+
+
+                                <tr>
+
+                                    <td>
+
+                                        <span class="pedido-numero">
+                                            #00123
+                                        </span>
+
+                                    </td>
+
+                                    <td>
+
+                                        <span class="pedido-cliente">
+                                            Ana Oliveira
+                                        </span>
+
+                                    </td>
+
+                                    <td>
+                                        R$ 28,00
+                                    </td>
+
+                                    <td>
+
+                                        <span class="status status-pendente">
+                                            Pendente
+                                        </span>
+
+                                    </td>
+
+                                </tr>
+
+
+                                <tr>
+
+                                    <td>
+
+                                        <span class="pedido-numero">
+                                            #00122
+                                        </span>
+
+                                    </td>
+
+                                    <td>
+
+                                        <span class="pedido-cliente">
+                                            Lucas Costa
+                                        </span>
+
+                                    </td>
+
+                                    <td>
+                                        R$ 57,00
+                                    </td>
+
+                                    <td>
+
+                                        <span class="status status-entregue">
+                                            Entregue
+                                        </span>
+
+                                    </td>
+
+                                </tr>
+
+
+                                <tr>
+
+                                    <td>
+
+                                        <span class="pedido-numero">
+                                            #00121
+                                        </span>
+
+                                    </td>
+
+                                    <td>
+
+                                        <span class="pedido-cliente">
+                                            Beatriz Lima
+                                        </span>
+
+                                    </td>
+
+                                    <td>
+                                        R$ 35,00
+                                    </td>
+
+                                    <td>
+
+                                        <span class="status status-pronto">
+                                            Pronto
+                                        </span>
+
+                                    </td>
+
+                                </tr>
+
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </section>
+
+
+                <!-- VENDAS POR CATEGORIA -->
+
+                <section class="painel" id="relatorios">
+
+                    <div class="painel-cabecalho">
+
+                        <h2>
+                            Vendas por categoria
+                        </h2>
+
+                        <span class="ver-todos">
+                            Hoje
+                        </span>
+
+                    </div>
+
+
+                    <div class="barra-item">
+
+                        <div class="barra-info">
+
+                            <span>
+                                Bebidas quentes
+                            </span>
+
+                            <strong>
+                                42%
+                            </strong>
+
+                        </div>
+
+                        <div class="barra">
+                            <span style="width: 42%;"></span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="barra-item">
+
+                        <div class="barra-info">
+
+                            <span>
+                                Bebidas geladas
+                            </span>
+
+                            <strong>
+                                22%
+                            </strong>
+
+                        </div>
+
+                        <div class="barra">
+                            <span style="width: 22%;"></span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="barra-item">
+
+                        <div class="barra-info">
+
+                            <span>
+                                Padaria e confeitaria
+                            </span>
+
+                            <strong>
+                                18%
+                            </strong>
+
+                        </div>
+
+                        <div class="barra">
+                            <span style="width: 18%;"></span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="barra-item">
+
+                        <div class="barra-info">
+
+                            <span>
+                                Lanches e sobremesas
+                            </span>
+
+                            <strong>
+                                18%
+                            </strong>
+
+                        </div>
+
+                        <div class="barra">
+                            <span style="width: 18%;"></span>
+                        </div>
+
+                    </div>
+
+                </section>
+
+            </div>
+
+
+            <!-- COLUNA DIREITA -->
+
+            <div>
+
+
+                <!-- PRODUTOS MAIS VENDIDOS -->
+
+                <section class="painel" id="produtos">
+
+                    <div class="painel-cabecalho">
+
+                        <h2>
+                            Mais vendidos
+                        </h2>
+
+                        <a href="#" class="ver-todos">
+                            Produtos
+                        </a>
+
+                    </div>
+
+
+                    <div class="produto-vendido">
+
+                        <div class="produto-icon">
+
+                            <i class="bi bi-cup-hot-fill"></i>
+
+                        </div>
+
+                        <div class="produto-vendido-info">
+
+                            <strong>
+                                Cappuccino
+                            </strong>
+
+                            <span>
+                                Bebida quente
+                            </span>
+
+                        </div>
+
+                        <div class="quantidade-vendida">
+                            32
+                        </div>
+
+                    </div>
+
+
+                    <div class="produto-vendido">
+
+                        <div class="produto-icon">
+
+                            <i class="bi bi-cup-straw"></i>
+
+                        </div>
+
+                        <div class="produto-vendido-info">
+
+                            <strong>
+                                Café Gelado
+                            </strong>
+
+                            <span>
+                                Bebida gelada
+                            </span>
+
+                        </div>
+
+                        <div class="quantidade-vendida">
+                            27
+                        </div>
+
+                    </div>
+
+
+                    <div class="produto-vendido">
+
+                        <div class="produto-icon">
+
+                            <i class="bi bi-egg-fried"></i>
+
+                        </div>
+
+                        <div class="produto-vendido-info">
+
+                            <strong>
+                                Croissant
+                            </strong>
+
+                            <span>
+                                Padaria
+                            </span>
+
+                        </div>
+
+                        <div class="quantidade-vendida">
+                            24
+                        </div>
+
+                    </div>
+
+
+                    <div class="produto-vendido">
+
+                        <div class="produto-icon">
+
+                            <i class="bi bi-circle-fill"></i>
+
+                        </div>
+
+                        <div class="produto-vendido-info">
+
+                            <strong>
+                                Pão de Queijo
+                            </strong>
+
+                            <span>
+                                Lanche salgado
+                            </span>
+
+                        </div>
+
+                        <div class="quantidade-vendida">
+                            21
+                        </div>
+
+                    </div>
+
+
+                    <div class="produto-vendido">
+
+                        <div class="produto-icon">
+
+                            <i class="bi bi-cake2-fill"></i>
+
+                        </div>
+
+                        <div class="produto-vendido-info">
+
+                            <strong>
+                                Petit Gateau
+                            </strong>
+
+                            <span>
+                                Sobremesa
+                            </span>
+
+                        </div>
+
+                        <div class="quantidade-vendida">
+                            17
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- AÇÕES RÁPIDAS -->
+
+                <section class="painel">
+
+                    <div class="painel-cabecalho">
+
+                        <h2>
+                            Ações rápidas
+                        </h2>
+
+                    </div>
+
+
+                    <div class="acoes">
+
+                        <a href="#" class="acao">
+
+                            <i class="bi bi-plus-circle-fill"></i>
+
+                            <span>
+                                Adicionar produto
+                            </span>
+
+                        </a>
+
+
+                        <a href="#" class="acao">
+
+                            <i class="bi bi-bag-plus-fill"></i>
+
+                            <span>
+                                Novo pedido
+                            </span>
+
+                        </a>
+
+
+                        <a href="#" class="acao">
+
+                            <i class="bi bi-people-fill"></i>
+
+                            <span>
+                                Clientes
+                            </span>
+
+                        </a>
+
+
+                        <a href="#" class="acao">
+
+                            <i class="bi bi-file-earmark-bar-graph-fill"></i>
+
+                            <span>
+                                Relatórios
+                            </span>
+
+                        </a>
+
+                    </div>
+
+                </section>
+
+
+                <!-- CLIENTES -->
+
+                <section class="painel" id="clientes">
+
+                    <div class="painel-cabecalho">
+
+                        <h2>
+                            Clientes
+                        </h2>
+
+                        <a href="#" class="ver-todos">
+                            Ver clientes
+                        </a>
+
+                    </div>
+
+                    <p style="color:#795548; font-size:14px; line-height:1.7;">
+                        Sua cafeteria possui
+                        <strong>126 clientes cadastrados</strong>.
+                        Neste mês, 14 novos clientes realizaram
+                        seu primeiro pedido.
+                    </p>
+
+                </section>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================
+             RODAPÉ
+        ================================== -->
+
+        <footer style="
+            text-align:center;
+            padding:25px 0 5px;
+            color:#8D6E63;
+            font-size:12px;
+        ">
+
+            © 2026 Expresso Certório — Área Administrativa
+
+        </footer>
+
+    </main>
+
+</div>
+
+
+<!-- Bootstrap JS -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+```
+
+</body>
+
+</html>
