@@ -20,7 +20,9 @@
 
 </head>
 
+
 <body>
+
 
     <!-- =================================
          HEADER
@@ -59,6 +61,8 @@
 
                     <ul class="navbar-nav">
 
+                        <!-- HOME -->
+
                         <li class="nav-item">
 
                             <a class="nav-link" href="index.html">
@@ -72,6 +76,8 @@
                         </li>
 
 
+                        <!-- PRODUTOS -->
+
                         <li class="nav-item">
 
                             <a class="nav-link" href="Produtos.html">
@@ -84,6 +90,8 @@
 
                         </li>
 
+
+                        <!-- PEDIDOS -->
 
                         <li class="nav-item">
 
@@ -163,654 +171,909 @@
                 <div class="pedido-produtos">
 
 
-                    <!-- CAFÉ EXPRESSO -->
+                    <!-- =================================
+                         BEBIDAS QUENTES
+                    ================================== -->
 
-                    <article class="item-pedido" id="cafe-expresso">
+                    <div class="categoria-pedido">
 
-                        <div class="item-icone">
+                        <div class="categoria-pedido-titulo">
 
-                            <i class="bi bi-cup-hot-fill"></i>
+                            <span>
+                                BEBIDAS
+                            </span>
 
-                        </div>
-
-                        <div class="item-info">
-
-                            <h3>
-                                Café Expresso
-                            </h3>
-
-                            <p>
-                                Café intenso e aromático,
-                                preparado na medida certa.
-                            </p>
-
-                            <strong>
-                                R$ 6,00
-                            </strong>
-
-                        </div>
-
-                        <div class="quantidade">
-
-                            <label for="quantidade-cafe-expresso">
-                                Quantidade
-                            </label>
-
-                            <input type="number" id="quantidade-cafe-expresso" name="cafe-expresso" min="0" value="0">
-
-                        </div>
-
-                    </article>
-
-
-
-                    <!-- CAFÉ COM LEITE -->
-
-                    <article class="item-pedido" id="cafe-leite">
-
-                        <div class="item-icone">
-
-                            <i class="bi bi-cup-hot"></i>
-
-                        </div>
-
-                        <div class="item-info">
-
-                            <h3>
-                                Café com Leite
-                            </h3>
+                            <h2>
+                                <i class="bi bi-cup-hot-fill"></i>
+                                Bebidas Quentes
+                            </h2>
 
                             <p>
-                                Café encorpado combinado
-                                com leite cremoso.
+                                Cafés preparados para deixar
+                                seu momento ainda mais especial.
                             </p>
 
-                            <strong>
-                                R$ 8,00
-                            </strong>
-
                         </div>
 
-                        <div class="quantidade">
 
-                            <label for="quantidade-cafe-leite">
-                                Quantidade
-                            </label>
+                        <!-- CAFÉ EXPRESSO -->
 
-                            <input type="number" id="quantidade-cafe-leite" name="cafe-leite" min="0" value="0">
+                        <article class="item-pedido" id="cafe-expresso">
 
-                        </div>
+                            <div class="item-icone">
 
-                    </article>
+                                <i class="bi bi-cup-hot-fill"></i>
+
+                            </div>
+
+                            <div class="item-info">
+
+                                <h3>
+                                    Café Expresso
+                                </h3>
+
+                                <p>
+                                    Café intenso e aromático,
+                                    preparado na medida certa.
+                                </p>
+
+                                <strong>
+                                    R$ 6,00
+                                </strong>
+
+                            </div>
+
+                            <div class="quantidade">
+
+                                <label for="quantidade-cafe-expresso">
+                                    Quantidade
+                                </label>
+
+                                <input type="number" id="quantidade-cafe-expresso" name="cafe-expresso"
+                                    class="quantidade-input" data-preco="6" min="0" value="0">
+
+                            </div>
+
+                        </article>
+
+
+                        <!-- CAPPUCCINO -->
+
+                        <article class="item-pedido" id="cappuccino">
+
+                            <div class="item-icone">
+
+                                <i class="bi bi-cup-hot-fill"></i>
+
+                            </div>
+
+                            <div class="item-info">
+
+                                <h3>
+                                    Cappuccino
+                                </h3>
+
+                                <p>
+                                    Cremoso e equilibrado,
+                                    com textura delicada e aroma irresistível.
+                                </p>
+
+                                <strong>
+                                    R$ 10,00
+                                </strong>
+
+                            </div>
+
+                            <div class="quantidade">
+
+                                <label for="quantidade-cappuccino">
+                                    Quantidade
+                                </label>
+
+                                <input type="number" id="quantidade-cappuccino" name="cappuccino"
+                                    class="quantidade-input" data-preco="10" min="0" value="0">
+
+                            </div>
+
+                        </article>
+
+
+                        <!-- CAFÉ COM LEITE -->
+
+                        <article class="item-pedido" id="cafe-leite">
+
+                            <div class="item-icone">
+
+                                <i class="bi bi-cup-hot"></i>
+
+                            </div>
+
+                            <div class="item-info">
+
+                                <h3>
+                                    Café com Leite
+                                </h3>
+
+                                <p>
+                                    Café encorpado combinado
+                                    com leite cremoso.
+                                </p>
+
+                                <strong>
+                                    R$ 8,00
+                                </strong>
+
+                            </div>
+
+                            <div class="quantidade">
+
+                                <label for="quantidade-cafe-leite">
+                                    Quantidade
+                                </label>
+
+                                <input type="number" id="quantidade-cafe-leite" name="cafe-leite"
+                                    class="quantidade-input" data-preco="8" min="0" value="0">
+
+                            </div>
+
+                        </article>
+
+                    </div>
 
 
 
-                    <!-- CAPPUCCINO -->
+                    <!-- =================================
+                         BEBIDAS GELADAS
+                    ================================== -->
 
-                    <article class="item-pedido" id="cappuccino">
+                    <div class="categoria-pedido">
 
-                        <div class="item-icone">
+                        <div class="categoria-pedido-titulo">
 
-                            <i class="bi bi-cup-hot-fill"></i>
+                            <span>
+                                REFRESCANTES
+                            </span>
 
-                        </div>
-
-                        <div class="item-info">
-
-                            <h3>
-                                Cappuccino
-                            </h3>
+                            <h2>
+                                <i class="bi bi-snow2"></i>
+                                Bebidas Geladas
+                            </h2>
 
                             <p>
-                                Cremoso, equilibrado e
-                                com aroma irresistível.
+                                Opções refrescantes para
+                                qualquer momento do dia.
                             </p>
 
-                            <strong>
-                                R$ 10,00
-                            </strong>
-
                         </div>
 
-                        <div class="quantidade">
 
-                            <label for="quantidade-cappuccino">
-                                Quantidade
-                            </label>
+                        <!-- CAFÉ GELADO -->
 
-                            <input type="number" id="quantidade-cappuccino" name="cappuccino" min="0" value="0">
+                        <article class="item-pedido" id="cafe-gelado">
 
-                        </div>
+                            <div class="item-icone">
 
-                    </article>
+                                <i class="bi bi-snow"></i>
+
+                            </div>
+
+                            <div class="item-info">
+
+                                <h3>
+                                    Café Gelado
+                                </h3>
+
+                                <p>
+                                    Café refrescante servido gelado,
+                                    perfeito para os dias mais quentes.
+                                </p>
+
+                                <strong>
+                                    R$ 12,00
+                                </strong>
+
+                            </div>
+
+                            <div class="quantidade">
+
+                                <label for="quantidade-cafe-gelado">
+                                    Quantidade
+                                </label>
+
+                                <input type="number" id="quantidade-cafe-gelado" name="cafe-gelado"
+                                    class="quantidade-input" data-preco="12" min="0" value="0">
+
+                            </div>
+
+                        </article>
+
+
+                        <!-- SMOOTHIE -->
+
+                        <article class="item-pedido" id="smoothie">
+
+                            <div class="item-icone">
+
+                                <i class="bi bi-cup-straw"></i>
+
+                            </div>
+
+                            <div class="item-info">
+
+                                <h3>
+                                    Smoothie de Frutas Vermelhas
+                                </h3>
+
+                                <p>
+                                    Bebida cremosa preparada com
+                                    frutas vermelhas e muito sabor.
+                                </p>
+
+                                <strong>
+                                    R$ 13,00
+                                </strong>
+
+                            </div>
+
+                            <div class="quantidade">
+
+                                <label for="quantidade-smoothie">
+                                    Quantidade
+                                </label>
+
+                                <input type="number" id="quantidade-smoothie" name="smoothie" class="quantidade-input"
+                                    data-preco="13" min="0" value="0">
+
+                            </div>
+
+                        </article>
+
+
+                        <!-- COLD BREW -->
+
+                        <article class="item-pedido" id="cold-brew">
+
+                            <div class="item-icone">
+
+                                <i class="bi bi-cup-straw"></i>
+
+                            </div>
+
+                            <div class="item-info">
+
+                                <h3>
+                                    Cold Brew
+                                </h3>
+
+                                <p>
+                                    Café extraído a frio,
+                                    suave, refrescante e aromático.
+                                </p>
+
+                                <strong>
+                                    R$ 14,00
+                                </strong>
+
+                            </div>
+
+                            <div class="quantidade">
+
+                                <label for="quantidade-cold-brew">
+                                    Quantidade
+                                </label>
+
+                                <input type="number" id="quantidade-cold-brew" name="cold-brew" class="quantidade-input"
+                                    data-preco="14" min="0" value="0">
+
+                            </div>
+
+                        </article>
+
+                    </div>
 
 
 
-                    <!-- CAFÉ GELADO -->
+                    <!-- =================================
+                         PADARIA E CONFEITARIA
+                    ================================== -->
 
-                    <article class="item-pedido" id="cafe-gelado">
+                    <div class="categoria-pedido">
 
-                        <div class="item-icone">
+                        <div class="categoria-pedido-titulo">
 
-                            <i class="bi bi-snow"></i>
+                            <span>
+                                PADARIA
+                            </span>
 
-                        </div>
-
-                        <div class="item-info">
-
-                            <h3>
-                                Café Gelado
-                            </h3>
+                            <h2>
+                                <i class="bi bi-basket-fill"></i>
+                                Padaria e Confeitaria
+                            </h2>
 
                             <p>
-                                Uma opção refrescante
-                                para qualquer momento.
+                                Delícias fresquinhas para
+                                acompanhar seu café.
                             </p>
 
-                            <strong>
-                                R$ 12,00
-                            </strong>
-
                         </div>
 
-                        <div class="quantidade">
 
-                            <label for="quantidade-cafe-gelado">
-                                Quantidade
-                            </label>
+                        <!-- CROISSANT -->
 
-                            <input type="number" id="quantidade-cafe-gelado" name="cafe-gelado" min="0" value="0">
+                        <article class="item-pedido" id="croissant">
 
-                        </div>
+                            <div class="item-icone">
 
-                    </article>
+                                <i class="bi bi-egg-fried"></i>
+
+                            </div>
+
+                            <div class="item-info">
+
+                                <h3>
+                                    Croissant
+                                </h3>
+
+                                <p>
+                                    Massa leve, dourada e crocante,
+                                    perfeita para acompanhar seu café.
+                                </p>
+
+                                <strong>
+                                    R$ 7,00
+                                </strong>
+
+                            </div>
+
+                            <div class="quantidade">
+
+                                <label for="quantidade-croissant">
+                                    Quantidade
+                                </label>
+
+                                <input type="number" id="quantidade-croissant" name="croissant" class="quantidade-input"
+                                    data-preco="7" min="0" value="0">
+
+                            </div>
+
+                        </article>
+
+
+                        <!-- COOKIES -->
+
+                        <article class="item-pedido" id="cookies">
+
+                            <div class="item-icone">
+
+                                <i class="bi bi-circle-fill"></i>
+
+                            </div>
+
+                            <div class="item-info">
+
+                                <h3>
+                                    Cookies
+                                </h3>
+
+                                <p>
+                                    Cookies crocantes por fora
+                                    e macios por dentro.
+                                </p>
+
+                                <strong>
+                                    R$ 7,00
+                                </strong>
+
+                            </div>
+
+                            <div class="quantidade">
+
+                                <label for="quantidade-cookies">
+                                    Quantidade
+                                </label>
+
+                                <input type="number" id="quantidade-cookies" name="cookies" class="quantidade-input"
+                                    data-preco="7" min="0" value="0">
+
+                            </div>
+
+                        </article>
+
+
+                        <!-- MUFFINS -->
+
+                        <article class="item-pedido" id="muffins">
+
+                            <div class="item-icone">
+
+                                <i class="bi bi-cake2-fill"></i>
+
+                            </div>
+
+                            <div class="item-info">
+
+                                <h3>
+                                    Muffins
+                                </h3>
+
+                                <p>
+                                    Bolinhos macios e saborosos,
+                                    ideais para acompanhar uma bebida.
+                                </p>
+
+                                <strong>
+                                    R$ 8,00
+                                </strong>
+
+                            </div>
+
+                            <div class="quantidade">
+
+                                <label for="quantidade-muffins">
+                                    Quantidade
+                                </label>
+
+                                <input type="number" id="quantidade-muffins" name="muffins" class="quantidade-input"
+                                    data-preco="8" min="0" value="0">
+
+                            </div>
+
+                        </article>
+
+                    </div>
 
 
 
-                    <!-- MOCHA -->
+                    <!-- =================================
+                         LANCHES SALGADOS
+                    ================================== -->
 
-                    <article class="item-pedido" id="mocha">
+                    <div class="categoria-pedido">
 
-                        <div class="item-icone">
+                        <div class="categoria-pedido-titulo">
 
-                            <i class="bi bi-cup-hot"></i>
+                            <span>
+                                SALGADOS
+                            </span>
 
-                        </div>
-
-                        <div class="item-info">
-
-                            <h3>
-                                Mocha
-                            </h3>
+                            <h2>
+                                <i class="bi bi-basket2-fill"></i>
+                                Lanches Salgados
+                            </h2>
 
                             <p>
-                                Café, leite e chocolate
-                                em uma bebida cremosa.
+                                Opções salgadas para uma refeição
+                                rápida, prática e saborosa.
                             </p>
 
-                            <strong>
-                                R$ 11,00
-                            </strong>
-
                         </div>
 
-                        <div class="quantidade">
 
-                            <label for="quantidade-mocha">
-                                Quantidade
-                            </label>
+                        <!-- SANDUÍCHE NATURAL -->
 
-                            <input type="number" id="quantidade-mocha" name="mocha" min="0" value="0">
+                        <article class="item-pedido" id="sanduiche-natural">
 
-                        </div>
+                            <div class="item-icone">
 
-                    </article>
+                                <i class="bi bi-list"></i>
+
+                            </div>
+
+                            <div class="item-info">
+
+                                <h3>
+                                    Sanduíche Natural
+                                </h3>
+
+                                <p>
+                                    Sanduíche leve e saboroso,
+                                    preparado com ingredientes frescos.
+                                </p>
+
+                                <strong>
+                                    R$ 12,00
+                                </strong>
+
+                            </div>
+
+                            <div class="quantidade">
+
+                                <label for="quantidade-sanduiche-natural">
+                                    Quantidade
+                                </label>
+
+                                <input type="number" id="quantidade-sanduiche-natural" name="sanduiche-natural"
+                                    class="quantidade-input" data-preco="12" min="0" value="0">
+
+                            </div>
+
+                        </article>
+
+
+                        <!-- PÃO DE QUEIJO -->
+
+                        <article class="item-pedido" id="pao-queijo">
+
+                            <div class="item-icone">
+
+                                <i class="bi bi-circle-fill"></i>
+
+                            </div>
+
+                            <div class="item-info">
+
+                                <h3>
+                                    Pão de Queijo
+                                </h3>
+
+                                <p>
+                                    Pequenos, quentinhos e saborosos,
+                                    feitos para acompanhar seu café.
+                                </p>
+
+                                <strong>
+                                    R$ 6,00
+                                </strong>
+
+                            </div>
+
+                            <div class="quantidade">
+
+                                <label for="quantidade-pao-queijo">
+                                    Quantidade
+                                </label>
+
+                                <input type="number" id="quantidade-pao-queijo" name="pao-queijo"
+                                    class="quantidade-input" data-preco="6" min="0" value="0">
+
+                            </div>
+
+                        </article>
+
+
+                        <!-- EMPADA DE ALCACHOFRA -->
+
+                        <article class="item-pedido" id="empada-alcachofra">
+
+                            <div class="item-icone">
+
+                                <i class="bi bi-pie-chart-fill"></i>
+
+                            </div>
+
+                            <div class="item-info">
+
+                                <h3>
+                                    Empada de Alcachofra
+                                </h3>
+
+                                <p>
+                                    Massa delicada e recheio cremoso
+                                    de alcachofra.
+                                </p>
+
+                                <strong>
+                                    R$ 10,00
+                                </strong>
+
+                            </div>
+
+                            <div class="quantidade">
+
+                                <label for="quantidade-empada-alcachofra">
+                                    Quantidade
+                                </label>
+
+                                <input type="number" id="quantidade-empada-alcachofra" name="empada-alcachofra"
+                                    class="quantidade-input" data-preco="10" min="0" value="0">
+
+                            </div>
+
+                        </article>
+
+                    </div>
 
 
 
-                    <!-- CAFÉ ESPECIAL -->
+                    <!-- =================================
+                         SOBREMESAS
+                    ================================== -->
 
-                    <article class="item-pedido" id="cafe-especial">
+                    <div class="categoria-pedido">
 
-                        <div class="item-icone">
+                        <div class="categoria-pedido-titulo">
 
-                            <i class="bi bi-star-fill"></i>
+                            <span>
+                                DOCES
+                            </span>
 
-                        </div>
-
-                        <div class="item-info">
-
-                            <h3>
-                                Café Especial
-                            </h3>
+                            <h2>
+                                <i class="bi bi-cake2-fill"></i>
+                                Sobremesas
+                            </h2>
 
                             <p>
-                                Seleção especial de grãos
-                                para uma experiência diferenciada.
+                                Doces especiais para finalizar
+                                seu momento com muito sabor.
                             </p>
 
-                            <strong>
-                                R$ 14,00
-                            </strong>
-
                         </div>
 
-                        <div class="quantidade">
 
-                            <label for="quantidade-cafe-especial">
-                                Quantidade
-                            </label>
+                        <!-- TIRAMISÙ -->
 
-                            <input type="number" id="quantidade-cafe-especial" name="cafe-especial" min="0" value="0">
+                        <article class="item-pedido" id="tiramisu">
 
-                        </div>
+                            <div class="item-icone">
 
-                    </article>
+                                <i class="bi bi-cake2-fill"></i>
+
+                            </div>
+
+                            <div class="item-info">
+
+                                <h3>
+                                    Tiramisù
+                                </h3>
+
+                                <p>
+                                    Sobremesa italiana cremosa,
+                                    delicada e com sabor marcante de café.
+                                </p>
+
+                                <strong>
+                                    R$ 14,00
+                                </strong>
+
+                            </div>
+
+                            <div class="quantidade">
+
+                                <label for="quantidade-tiramisu">
+                                    Quantidade
+                                </label>
+
+                                <input type="number" id="quantidade-tiramisu" name="tiramisu" class="quantidade-input"
+                                    data-preco="14" min="0" value="0">
+
+                            </div>
+
+                        </article>
+
+
+                        <!-- PETIT GATEAU -->
+
+                        <article class="item-pedido" id="petit-gateau">
+
+                            <div class="item-icone">
+
+                                <i class="bi bi-heart-fill"></i>
+
+                            </div>
+
+                            <div class="item-info">
+
+                                <h3>
+                                    Petit Gateau
+                                </h3>
+
+                                <p>
+                                    Bolinho de chocolate com interior
+                                    cremoso e sabor intenso.
+                                </p>
+
+                                <strong>
+                                    R$ 15,00
+                                </strong>
+
+                            </div>
+
+                            <div class="quantidade">
+
+                                <label for="quantidade-petit-gateau">
+                                    Quantidade
+                                </label>
+
+                                <input type="number" id="quantidade-petit-gateau" name="petit-gateau"
+                                    class="quantidade-input" data-preco="15" min="0" value="0">
+
+                            </div>
+
+                        </article>
+
+
+                        <!-- TORTA DE AMORA -->
+
+                        <article class="item-pedido" id="torta-amora">
+
+                            <div class="item-icone">
+
+                                <i class="bi bi-pie-chart-fill"></i>
+
+                            </div>
+
+                            <div class="item-info">
+
+                                <h3>
+                                    Torta de Amora
+                                </h3>
+
+                                <p>
+                                    Torta delicada com recheio de
+                                    amora e um toque adocicado.
+                                </p>
+
+                                <strong>
+                                    R$ 12,00
+                                </strong>
+
+                            </div>
+
+                            <div class="quantidade">
+
+                                <label for="quantidade-torta-amora">
+                                    Quantidade
+                                </label>
+
+                                <input type="number" id="quantidade-torta-amora" name="torta-amora"
+                                    class="quantidade-input" data-preco="12" min="0" value="0">
+
+                            </div>
+
+                        </article>
+
+                    </div>
 
 
 
-                    <!-- CHOCOLATE QUENTE -->
+                    <!-- =================================
+                         OPÇÕES SAUDÁVEIS
+                    ================================== -->
 
-                    <article class="item-pedido" id="chocolate">
+                    <div class="categoria-pedido">
 
-                        <div class="item-icone">
+                        <div class="categoria-pedido-titulo">
 
-                            <i class="bi bi-cup-hot-fill"></i>
+                            <span>
+                                EQUILÍBRIO
+                            </span>
 
-                        </div>
-
-                        <div class="item-info">
-
-                            <h3>
-                                Chocolate Quente
-                            </h3>
+                            <h2>
+                                <i class="bi bi-leaf-fill"></i>
+                                Opções Saudáveis
+                            </h2>
 
                             <p>
-                                Bebida cremosa e quentinha.
+                                Alternativas leves e saborosas
+                                para uma alimentação equilibrada.
                             </p>
 
-                            <strong>
-                                R$ 10,00
-                            </strong>
-
                         </div>
 
-                        <div class="quantidade">
 
-                            <label for="quantidade-chocolate">
-                                Quantidade
-                            </label>
+                        <!-- IOGURTE COM GRANOLA -->
 
-                            <input type="number" id="quantidade-chocolate" name="chocolate" min="0" value="0">
+                        <article class="item-pedido" id="iogurte-granola">
 
-                        </div>
+                            <div class="item-icone">
 
-                    </article>
+                                <i class="bi bi-cup-fill"></i>
 
+                            </div>
 
+                            <div class="item-info">
 
-                    <!-- CHÁ ESPECIAL -->
+                                <h3>
+                                    Iogurte com Granola 0 Lactose
+                                </h3>
 
-                    <article class="item-pedido" id="cha">
+                                <p>
+                                    Iogurte cremoso sem lactose
+                                    acompanhado de granola crocante.
+                                </p>
 
-                        <div class="item-icone">
+                                <strong>
+                                    R$ 11,00
+                                </strong>
 
-                            <i class="bi bi-cup"></i>
+                            </div>
 
-                        </div>
+                            <div class="quantidade">
 
-                        <div class="item-info">
+                                <label for="quantidade-iogurte-granola">
+                                    Quantidade
+                                </label>
 
-                            <h3>
-                                Chá Especial
-                            </h3>
+                                <input type="number" id="quantidade-iogurte-granola" name="iogurte-granola"
+                                    class="quantidade-input" data-preco="11" min="0" value="0">
 
-                            <p>
-                                Sabores leves e aromáticos.
-                            </p>
+                            </div>
 
-                            <strong>
-                                R$ 8,00
-                            </strong>
+                        </article>
 
-                        </div>
 
-                        <div class="quantidade">
+                        <!-- BOLO DE FRUTAS SEM GLÚTEN -->
 
-                            <label for="quantidade-cha">
-                                Quantidade
-                            </label>
+                        <article class="item-pedido" id="bolo-frutas">
 
-                            <input type="number" id="quantidade-cha" name="cha" min="0" value="0">
+                            <div class="item-icone">
 
-                        </div>
+                                <i class="bi bi-cake2-fill"></i>
 
-                    </article>
+                            </div>
 
+                            <div class="item-info">
 
+                                <h3>
+                                    Bolo de Frutas sem Glúten
+                                </h3>
 
-                    <!-- ICED COFFEE -->
+                                <p>
+                                    Bolo macio preparado com frutas,
+                                    sem glúten e cheio de sabor.
+                                </p>
 
-                    <article class="item-pedido" id="iced-coffee">
+                                <strong>
+                                    R$ 10,00
+                                </strong>
 
-                        <div class="item-icone">
+                            </div>
 
-                            <i class="bi bi-snow2"></i>
+                            <div class="quantidade">
 
-                        </div>
+                                <label for="quantidade-bolo-frutas">
+                                    Quantidade
+                                </label>
 
-                        <div class="item-info">
+                                <input type="number" id="quantidade-bolo-frutas" name="bolo-frutas"
+                                    class="quantidade-input" data-preco="10" min="0" value="0">
 
-                            <h3>
-                                Iced Coffee
-                            </h3>
+                            </div>
 
-                            <p>
-                                Café gelado e refrescante,
-                                perfeito para qualquer momento.
-                            </p>
+                        </article>
 
-                            <strong>
-                                R$ 9,00
-                            </strong>
 
-                        </div>
+                        <!-- SALADA DE FRUTAS -->
 
-                        <div class="quantidade">
+                        <article class="item-pedido" id="salada-frutas">
 
-                            <label for="quantidade-iced-coffee">
-                                Quantidade
-                            </label>
+                            <div class="item-icone">
 
-                            <input type="number" id="quantidade-iced-coffee" name="iced-coffee" min="0" value="0">
+                                <i class="bi bi-apple"></i>
 
-                        </div>
+                            </div>
 
-                    </article>
+                            <div class="item-info">
 
+                                <h3>
+                                    Salada de Frutas
+                                </h3>
 
+                                <p>
+                                    Seleção de frutas frescas
+                                    para uma opção leve e refrescante.
+                                </p>
 
-                    <!-- SUCO NATURAL -->
+                                <strong>
+                                    R$ 9,00
+                                </strong>
 
-                    <article class="item-pedido" id="suco">
+                            </div>
 
-                        <div class="item-icone">
+                            <div class="quantidade">
 
-                            <i class="bi bi-cup-straw"></i>
+                                <label for="quantidade-salada-frutas">
+                                    Quantidade
+                                </label>
 
-                        </div>
+                                <input type="number" id="quantidade-salada-frutas" name="salada-frutas"
+                                    class="quantidade-input" data-preco="9" min="0" value="0">
 
-                        <div class="item-info">
+                            </div>
 
-                            <h3>
-                                Suco Natural
-                            </h3>
+                        </article>
 
-                            <p>
-                                Suco preparado com frutas,
-                                trazendo frescor e sabor.
-                            </p>
-
-                            <strong>
-                                R$ 9,00
-                            </strong>
-
-                        </div>
-
-                        <div class="quantidade">
-
-                            <label for="quantidade-suco">
-                                Quantidade
-                            </label>
-
-                            <input type="number" id="quantidade-suco" name="suco" min="0" value="0">
-
-                        </div>
-
-                    </article>
-
-
-
-                    <!-- REFRIGERANTE -->
-
-                    <article class="item-pedido" id="refrigerante">
-
-                        <div class="item-icone">
-
-                            <i class="bi bi-cup-straw"></i>
-
-                        </div>
-
-                        <div class="item-info">
-
-                            <h3>
-                                Refrigerante
-                            </h3>
-
-                            <p>
-                                Bebida gelada e refrescante
-                                para acompanhar seu pedido.
-                            </p>
-
-                            <strong>
-                                R$ 7,00
-                            </strong>
-
-                        </div>
-
-                        <div class="quantidade">
-
-                            <label for="quantidade-refrigerante">
-                                Quantidade
-                            </label>
-
-                            <input type="number" id="quantidade-refrigerante" name="refrigerante" min="0" value="0">
-
-                        </div>
-
-                    </article>
-
-
-
-                    <!-- CROISSANT -->
-
-                    <article class="item-pedido" id="croissant">
-
-                        <div class="item-icone">
-
-                            <i class="bi bi-egg-fried"></i>
-
-                        </div>
-
-                        <div class="item-info">
-
-                            <h3>
-                                Croissant
-                            </h3>
-
-                            <p>
-                                Massa leve, dourada e crocante.
-                            </p>
-
-                            <strong>
-                                R$ 6,00
-                            </strong>
-
-                        </div>
-
-                        <div class="quantidade">
-
-                            <label for="quantidade-croissant">
-                                Quantidade
-                            </label>
-
-                            <input type="number" id="quantidade-croissant" name="croissant" min="0" value="0">
-
-                        </div>
-
-                    </article>
-
-
-
-                    <!-- PÃO DE QUEIJO -->
-
-                    <article class="item-pedido" id="pao-queijo">
-
-                        <div class="item-icone">
-
-                            <i class="bi bi-circle-fill"></i>
-
-                        </div>
-
-                        <div class="item-info">
-
-                            <h3>
-                                Pão de Queijo
-                            </h3>
-
-                            <p>
-                                Quentinhos e saborosos.
-                            </p>
-
-                            <strong>
-                                R$ 6,00
-                            </strong>
-
-                        </div>
-
-                        <div class="quantidade">
-
-                            <label for="quantidade-pao-queijo">
-                                Quantidade
-                            </label>
-
-                            <input type="number" id="quantidade-pao-queijo" name="pao-queijo" min="0" value="0">
-
-                        </div>
-
-                    </article>
-
-
-
-                    <!-- TORTA DO DIA -->
-
-                    <article class="item-pedido" id="torta">
-
-                        <div class="item-icone">
-
-                            <i class="bi bi-pie-chart-fill"></i>
-
-                        </div>
-
-                        <div class="item-info">
-
-                            <h3>
-                                Torta do Dia
-                            </h3>
-
-                            <p>
-                                Uma opção especial para
-                                deixar seu momento mais saboroso.
-                            </p>
-
-                            <strong>
-                                R$ 10,00
-                            </strong>
-
-                        </div>
-
-                        <div class="quantidade">
-
-                            <label for="quantidade-torta">
-                                Quantidade
-                            </label>
-
-                            <input type="number" id="quantidade-torta" name="torta" min="0" value="0">
-
-                        </div>
-
-                    </article>
-
-
-
-                    <!-- BROWNIE -->
-
-                    <article class="item-pedido" id="brownie">
-
-                        <div class="item-icone">
-
-                            <i class="bi bi-square-fill"></i>
-
-                        </div>
-
-                        <div class="item-info">
-
-                            <h3>
-                                Brownie
-                            </h3>
-
-                            <p>
-                                Macio, chocolatudo e saboroso.
-                            </p>
-
-                            <strong>
-                                R$ 9,00
-                            </strong>
-
-                        </div>
-
-                        <div class="quantidade">
-
-                            <label for="quantidade-brownie">
-                                Quantidade
-                            </label>
-
-                            <input type="number" id="quantidade-brownie" name="brownie" min="0" value="0">
-
-                        </div>
-
-                    </article>
-
-
-
-                    <!-- SANDUÍCHES -->
-
-                    <article class="item-pedido" id="sanduiches">
-
-                        <div class="item-icone">
-
-                            <i class="bi bi-list"></i>
-
-                        </div>
-
-                        <div class="item-info">
-
-                            <h3>
-                                Sanduíches
-                            </h3>
-
-                            <p>
-                                Opções saborosas para uma
-                                refeição rápida e deliciosa.
-                            </p>
-
-                            <strong>
-                                R$ 12,00
-                            </strong>
-
-                        </div>
-
-                        <div class="quantidade">
-
-                            <label for="quantidade-sanduiches">
-                                Quantidade
-                            </label>
-
-                            <input type="number" id="quantidade-sanduiches" name="sanduiches" min="0" value="0">
-
-                        </div>
-
-                    </article>
+                    </div>
 
                 </div>
 
@@ -952,7 +1215,7 @@
                                 Total
                             </span>
 
-                            <strong>
+                            <strong id="total">
                                 R$ 0,00
                             </strong>
 
@@ -961,23 +1224,21 @@
 
                         <small class="aviso-pedido">
 
-                            O total será calculado após
-                            o envio do pedido.
+                            O total é atualizado automaticamente
+                            conforme você escolhe os produtos.
 
                         </small>
 
 
-                        <!-- =================================
-                             BOTÃO QUE ABRE O MODAL
-                        ================================== -->
+                        <!-- BOTÃO FINALIZAR -->
 
-                        <a href="#modalConfirmacao" class="btn-finalizar">
+                        <button type="submit" class="btn-finalizar">
 
                             <i class="bi bi-check-circle-fill"></i>
 
                             Finalizar pedido
 
-                        </a>
+                        </button>
 
                     </div>
 
@@ -988,56 +1249,6 @@
         </section>
 
     </main>
-
-
-
-    <!-- =================================
-         MODAL DE CONFIRMAÇÃO
-    ================================== -->
-
-    <div class="modal-confirmacao" id="modalConfirmacao">
-
-        <div class="modal-caixa">
-
-            <div class="modal-icone">
-
-                <i class="bi bi-check-circle-fill"></i>
-
-            </div>
-
-
-            <h2>
-                Pedido confirmado!
-            </h2>
-
-
-            <p>
-                Seu pedido foi recebido com sucesso.
-                Obrigado por escolher o Expresso Certório!
-            </p>
-
-
-            <div class="modal-acoes">
-
-                <a href="#" class="btn-modal-principal">
-
-                    <i class="bi bi-house-fill"></i>
-
-                    Voltar
-
-                </a>
-
-                <a href="#" class="btn-modal-secundario">
-
-                    Fechar
-
-                </a>
-
-            </div>
-
-        </div>
-
-    </div>
 
 
 
@@ -1053,7 +1264,6 @@
                 © 2026 Expresso Certório — Todos os direitos reservados.
             </p>
 
-
             <div class="footer-icons">
 
                 <a href="#" aria-label="Instagram">
@@ -1062,13 +1272,11 @@
 
                 </a>
 
-
                 <a href="#" aria-label="Facebook">
 
                     <i class="bi bi-facebook"></i>
 
                 </a>
-
 
                 <a href="#" aria-label="WhatsApp">
 
@@ -1081,6 +1289,7 @@
         </div>
 
     </footer>
+
 
 
 </body>
