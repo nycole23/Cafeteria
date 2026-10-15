@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Crie sua conta no Expresso Certório.">
+    <title>Criar conta | Expresso Certório</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --marrom: #3E2723;
+            --marrom-claro: #654438;
+            --creme: #F7F1E8;
+            --dourado: #D99A45;
+            --texto: #35231f;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            min-height: 100vh;
+            margin: 0;
+            background: var(--creme);
+            color: var(--texto);
+            font-family: Georgia, "Times New Roman", serif;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .topo {
+            background: var(--marrom);
+            padding: 17px 5%;
+        }
+
+        .marca {
+            color: #F5D6A1;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.25rem;
+            font-weight: bold;
+            letter-spacing: .5px;
+        }
+
+        .marca i { font-size: 1.7rem; }
+
+        main {
+            flex: 1;
+            display: grid;
+            place-items: center;
+            padding: 42px 18px;
+        }
+
+        .cadastro-card {
+            width: min(100%, 540px);
+            background: #fffdf9;
+            border: 1px solid rgba(62, 39, 35, .12);
+            border-radius: 22px;
+            padding: clamp(25px, 5vw, 43px);
+            box-shadow: 0 18px 45px rgba(62, 39, 35, .10);
+        }
+
+        .icone-cafe {
+            width: 58px;
+            height: 58px;
+            margin: 0 auto 15px;
+            display: grid;
+            place-items: center;
+            border-radius: 50%;
+            background: #f3e2c8;
+            color: var(--marrom);
+            font-size: 1.8rem;
+        }
+
+        h1 {
+            color: var(--marrom);
+            text-align: center;
+            font-size: clamp(1.8rem, 4vw, 2.25rem);
+            margin-bottom: 8px;
+        }
+
+        .subtitulo {
+            text-align: center;
+            color: #78645d;
+            margin-bottom: 28px;
+            font-family: Arial, sans-serif;
+            font-size: .95rem;
+        }
+
+        .form-label {
+            color: var(--marrom);
+            font-family: Arial, sans-serif;
+            font-size: .9rem;
+            font-weight: 600;
+            margin-bottom: 7px;
+        }
+
+        .form-control {
+            min-height: 48px;
+            border: 1px solid #ddcfc2;
+            border-radius: 10px;
+            background: #fff;
+            font-family: Arial, sans-serif;
+        }
+
+        .form-control:focus {
+            border-color: var(--dourado);
+            box-shadow: 0 0 0 .2rem rgba(217, 154, 69, .18);
+        }
+
+        .senha-wrap { position: relative; }
+        .senha-wrap .form-control { padding-right: 48px; }
+
+        .mostrar-senha {
+            position: absolute;
+            top: 50%;
+            right: 13px;
+            transform: translateY(-50%);
+            border: 0;
+            background: transparent;
+            color: #78645d;
+            padding: 4px;
+        }
+
+        .btn-cadastrar {
+            width: 100%;
+            min-height: 49px;
+            margin-top: 8px;
+            border: 0;
+            border-radius: 10px;
+            background: var(--marrom);
+            color: #fff;
+            font-family: Arial, sans-serif;
+            font-weight: 700;
+            transition: background .2s, transform .2s;
+        }
+
+        .btn-cadastrar:hover {
+            background: var(--marrom-claro);
+            color: #fff;
+            transform: translateY(-1px);
+        }
+
+        .termos {
+            font-family: Arial, sans-serif;
+            font-size: .85rem;
+            color: #6c5a53;
+        }
+
+        .termos a, .links a {
+            color: #8b5723;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .termos a:hover, .links a:hover { text-decoration: underline; }
+
+        .links {
+            text-align: center;
+            margin-top: 22px;
+            font-family: Arial, sans-serif;
+            font-size: .92rem;
+        }
+
+        .rodape {
+            background: #2B1B18;
+            color: #ead9c9;
+            text-align: center;
+            padding: 16px;
+            font-family: Arial, sans-serif;
+            font-size: .85rem;
+        }
+
+        @media (max-width: 480px) {
+            main { padding: 25px 13px; }
+            .cadastro-card { border-radius: 16px; }
+        }
+    </style>
+</head>
+<body>
+<header class="topo">
+    <a class="marca" th:href="@{/}" href="/">
+        <i class="bi bi-cup-hot-fill" aria-hidden="true"></i>
+        <span>EXPRESSO CERTÓRIO</span>
+    </a>
+</header>
+
+<main>
+    <section class="cadastro-card" aria-labelledby="tituloCadastro">
+        <div class="icone-cafe">
+            <i class="bi bi-person-plus-fill" aria-hidden="true"></i>
+        </div>
+        <h1 id="tituloCadastro">Crie sua conta</h1>
+        <p class="subtitulo">Faça parte do Expresso Certório e aproveite seu momento de café.</p>
+
+        <form th:action="@{/criar-conta}" action="/criar-conta" method="post">
+            <div class="mb-3">
+                <label for="nome" class="form-label">Nome completo</label>
+                <input type="text" class="form-control" id="nome" name="nome"
+                       placeholder="Digite seu nome completo" autocomplete="name" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="email" class="form-label">E-mail</label>
+                <input type="email" class="form-control" id="email" name="email"
+                       placeholder="seuemail@exemplo.com" autocomplete="email" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="telefone" class="form-label">Telefone (opcional)</label>
+                <input type="tel" class="form-control" id="telefone" name="telefone"
+                       placeholder="(00) 00000-0000" autocomplete="tel">
+            </div>
+
+            <div class="mb-3">
+                <label for="senha" class="form-label">Senha</label>
+                <div class="senha-wrap">
+                    <input type="password" class="form-control" id="senha" name="senha"
+                           placeholder="Crie uma senha" autocomplete="new-password"
+                           minlength="8" required>
+                    <button class="mostrar-senha" type="button" data-target="senha"
+                            aria-label="Mostrar senha" title="Mostrar senha">
+                        <i class="bi bi-eye" aria-hidden="true"></i>
+                    </button>
+                </div>
+                <div class="form-text">Use pelo menos 8 caracteres.</div>
+            </div>
+
+            <div class="mb-3">
+                <label for="confirmarSenha" class="form-label">Confirmar senha</label>
+                <div class="senha-wrap">
+                    <input type="password" class="form-control" id="confirmarSenha"
+                           name="confirmarSenha" placeholder="Digite a senha novamente"
+                           autocomplete="new-password" minlength="8" required>
+                    <button class="mostrar-senha" type="button" data-target="confirmarSenha"
+                            aria-label="Mostrar senha" title="Mostrar senha">
+                        <i class="bi bi-eye" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="form-check mb-3">
+                <input class="form-check-input" type="checkbox" id="aceiteTermos" name="aceiteTermos" required>
+                <label class="form-check-label termos" for="aceiteTermos">
+                    Li e aceito os <a href="#" onclick="return false;">termos de uso</a> e a
+                    <a href="#" onclick="return false;">política de privacidade</a>.
+                </label>
+            </div>
+
+            <p id="erroSenha" class="text-danger small d-none" role="alert">
+                As senhas não coincidem. Confira os dois campos.
+            </p>
+
+            <button type="submit" class="btn btn-cadastrar">
+                Criar minha conta
+            </button>
+        </form>
+
+        <div class="links">
+            Já tem uma conta?
+            <a th:href="@{/login}" href="/login">Entrar</a>
+            <span class="d-block mt-3">
+                    <a th:href="@{/}" href="/"><i class="bi bi-arrow-left" aria-hidden="true"></i> Voltar para o início</a>
+                </span>
+        </div>
+    </section>
+</main>
+
+<footer class="rodape">
+    © 2026 Expresso Certório — Todos os direitos reservados.
+</footer>
+
+<script>
+    document.querySelectorAll(".mostrar-senha").forEach((botao) => {
+        botao.addEventListener("click", () => {
+            const campo = document.getElementById(botao.dataset.target);
+            const mostrar = campo.type === "password";
+            campo.type = mostrar ? "text" : "password";
+            botao.innerHTML = mostrar
+                ? '<i class="bi bi-eye-slash" aria-hidden="true"></i>'
+                : '<i class="bi bi-eye" aria-hidden="true"></i>';
+            botao.setAttribute("aria-label", mostrar ? "Ocultar senha" : "Mostrar senha");
+            botao.title = mostrar ? "Ocultar senha" : "Mostrar senha";
+        });
+    });
+
+    const formulario = document.querySelector("form");
+    formulario.addEventListener("submit", (evento) => {
+        const senha = document.getElementById("senha").value;
+        const confirmar = document.getElementById("confirmarSenha").value;
+        const erro = document.getElementById("erroSenha");
+
+        if (senha !== confirmar) {
+            evento.preventDefault();
+            erro.classList.remove("d-none");
+            document.getElementById("confirmarSenha").focus();
+        } else {
+            erro.classList.add("d-none");
+        }
+    });
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Entre na sua conta do Expresso Certório.">
+    <title>Login | Expresso Certório</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --marrom: #3E2723;
+            --marrom-claro: #654438;
+            --creme: #F7F1E8;
+            --dourado: #D99A45;
+            --texto: #35231f;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            min-height: 100vh;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            background: var(--creme);
+            color: var(--texto);
+            font-family: Georgia, "Times New Roman", serif;
+        }
+
+        .topo {
+            background: var(--marrom);
+            padding: 17px 5%;
+        }
+
+        .marca {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: #F5D6A1;
+            text-decoration: none;
+            font-size: 1.25rem;
+            font-weight: bold;
+            letter-spacing: .5px;
+        }
+
+        .marca i { font-size: 1.7rem; }
+
+        main {
+            flex: 1;
+            display: grid;
+            place-items: center;
+            padding: 42px 18px;
+        }
+
+        .login-layout {
+            width: min(100%, 970px);
+            min-height: 550px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            overflow: hidden;
+            background: #fffdf9;
+            border: 1px solid rgba(62, 39, 35, .12);
+            border-radius: 22px;
+            box-shadow: 0 18px 45px rgba(62, 39, 35, .10);
+        }
+
+        .painel-apresentacao {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding: clamp(30px, 5vw, 58px);
+            color: #fff8ee;
+            background: linear-gradient(145deg, var(--marrom), var(--marrom-claro));
+        }
+
+        .painel-apresentacao .icone-grande {
+            display: grid;
+            place-items: center;
+            width: 72px;
+            height: 72px;
+            margin-bottom: 25px;
+            border: 1px solid rgba(245, 214, 161, .5);
+            border-radius: 50%;
+            color: #F5D6A1;
+            font-size: 2.1rem;
+        }
+
+        .selo {
+            color: #F5D6A1;
+            font-family: Arial, sans-serif;
+            font-size: .76rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .painel-apresentacao h1 {
+            margin: 12px 0 16px;
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            line-height: 1.15;
+        }
+
+        .painel-apresentacao p {
+            max-width: 340px;
+            margin: 0;
+            color: #ead9c9;
+            font-family: Arial, sans-serif;
+            line-height: 1.7;
+        }
+
+        .detalhe {
+            margin-top: 32px;
+            color: #F5D6A1;
+            font-size: .95rem;
+            font-style: italic;
+        }
+
+        .painel-formulario {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: clamp(28px, 5vw, 55px);
+        }
+
+        .icone-login {
+            display: grid;
+            place-items: center;
+            width: 58px;
+            height: 58px;
+            margin-bottom: 18px;
+            border-radius: 50%;
+            background: #f3e2c8;
+            color: var(--marrom);
+            font-size: 1.8rem;
+        }
+
+        .painel-formulario h2 {
+            margin: 0 0 8px;
+            color: var(--marrom);
+            font-size: clamp(1.8rem, 3vw, 2.2rem);
+        }
+
+        .subtitulo {
+            margin-bottom: 28px;
+            color: #78645d;
+            font-family: Arial, sans-serif;
+            font-size: .93rem;
+            line-height: 1.6;
+        }
+
+        .form-label {
+            margin-bottom: 7px;
+            color: var(--marrom);
+            font-family: Arial, sans-serif;
+            font-size: .9rem;
+            font-weight: 600;
+        }
+
+        .form-control {
+            min-height: 48px;
+            border: 1px solid #ddcfc2;
+            border-radius: 10px;
+            background: #fff;
+            font-family: Arial, sans-serif;
+        }
+
+        .form-control:focus {
+            border-color: var(--dourado);
+            box-shadow: 0 0 0 .2rem rgba(217, 154, 69, .18);
+        }
+
+        .senha-wrap { position: relative; }
+        .senha-wrap .form-control { padding-right: 48px; }
+
+        .mostrar-senha {
+            position: absolute;
+            top: 50%;
+            right: 13px;
+            transform: translateY(-50%);
+            padding: 4px;
+            border: 0;
+            background: transparent;
+            color: #78645d;
+        }
+
+        .form-check-label {
+            color: #6c5a53;
+            font-family: Arial, sans-serif;
+            font-size: .88rem;
+        }
+
+        .link-esqueci {
+            color: #8b5723;
+            font-family: Arial, sans-serif;
+            font-size: .88rem;
+            text-decoration: none;
+        }
+
+        .link-esqueci:hover, .cadastro-link a:hover, .voltar a:hover {
+            text-decoration: underline;
+        }
+
+        .btn-entrar {
+            width: 100%;
+            min-height: 49px;
+            margin-top: 9px;
+            border: 0;
+            border-radius: 10px;
+            background: var(--marrom);
+            color: #fff;
+            font-family: Arial, sans-serif;
+            font-weight: 700;
+            transition: background .2s, transform .2s;
+        }
+
+        .btn-entrar:hover {
+            background: var(--marrom-claro);
+            color: #fff;
+            transform: translateY(-1px);
+        }
+
+        .cadastro-link {
+            margin-top: 24px;
+            color: #6c5a53;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            font-size: .91rem;
+        }
+
+        .cadastro-link a, .voltar a {
+            color: #8b5723;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .voltar {
+            margin-top: 18px;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            font-size: .88rem;
+        }
+
+        .rodape {
+            padding: 16px;
+            background: #2B1B18;
+            color: #ead9c9;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            font-size: .85rem;
+        }
+
+        @media (max-width: 760px) {
+            main { padding: 25px 13px; }
+            .login-layout { max-width: 520px; grid-template-columns: 1fr; }
+            .painel-apresentacao { padding: 30px; }
+            .painel-apresentacao .icone-grande { width: 55px; height: 55px; margin-bottom: 15px; font-size: 1.7rem; }
+            .painel-apresentacao h1 { font-size: 2rem; }
+            .detalhe { margin-top: 18px; }
+            .painel-formulario { padding: 30px; }
+        }
+    </style>
+</head>
+<body>
+<header class="topo">
+    <a class="marca" th:href="@{/}" href="/">
+        <i class="bi bi-cup-hot-fill" aria-hidden="true"></i>
+        <span>EXPRESSO CERTÓRIO</span>
+    </a>
+</header>
+
+<main>
+    <div class="login-layout">
+        <section class="painel-apresentacao" aria-label="Apresentação do Expresso Certório">
+            <div class="icone-grande">
+                <i class="bi bi-cup-hot-fill" aria-hidden="true"></i>
+            </div>
+            <span class="selo">Seu momento, seu café</span>
+            <h1>Que bom ter você por aqui!</h1>
+            <p>Entre na sua conta para acompanhar seus pedidos e aproveitar tudo o que preparamos para você.</p>
+            <div class="detalhe"><i class="bi bi-heart-fill" aria-hidden="true"></i> Café feito com carinho em cada xícara.</div>
+        </section>
+
+        <section class="painel-formulario" aria-labelledby="tituloLogin">
+            <div class="icone-login">
+                <i class="bi bi-person-check-fill" aria-hidden="true"></i>
+            </div>
+            <h2 id="tituloLogin">Acesse sua conta</h2>
+            <p class="subtitulo">Informe seus dados para continuar.</p>
+
+            <form th:action="@{/login}" action="/login" method="post">
+                <div class="mb-3">
+                    <label for="email" class="form-label">E-mail</label>
+                    <input type="email" class="form-control" id="email" name="email"
+                           placeholder="Digite seu e-mail" autocomplete="email" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="senha" class="form-label">Senha</label>
+                    <div class="senha-wrap">
+                        <input type="password" class="form-control" id="senha" name="senha"
+                               placeholder="Digite sua senha" autocomplete="current-password" required>
+                        <button class="mostrar-senha" type="button" id="alternarSenha"
+                                aria-label="Mostrar senha" title="Mostrar senha">
+                            <i class="bi bi-eye" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="d-flex align-items-center justify-content-between gap-2 flex-wrap mb-3">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="lembrar" name="lembrar">
+                        <label class="form-check-label" for="lembrar">Lembrar de mim</label>
+                    </div>
+                    <a class="link-esqueci" th:href="@{/recuperar-senha}" href="/recuperar-senha">Esqueci minha senha</a>
+                </div>
+
+                <button type="submit" class="btn btn-entrar">
+                    <i class="bi bi-box-arrow-in-right me-2" aria-hidden="true"></i>
+                    Entrar
+                </button>
+            </form>
+
+            <div class="cadastro-link">
+                Ainda não tem uma conta?
+                <a th:href="@{/criar-conta}" href="/criar-conta">Criar conta</a>
+            </div>
+
+            <div class="voltar">
+                <a th:href="@{/}" href="/"><i class="bi bi-arrow-left me-1" aria-hidden="true"></i>Voltar para o início</a>
+            </div>
+        </section>
+    </div>
+</main>
+
+<footer class="rodape">
+    © 2026 Expresso Certório — Todos os direitos reservados.
+</footer>
+
+<script>
+    const botaoSenha = document.getElementById("alternarSenha");
+    const campoSenha = document.getElementById("senha");
+
+    botaoSenha.addEventListener("click", () => {
+        const mostrar = campoSenha.type === "password";
+        campoSenha.type = mostrar ? "text" : "password";
+        botaoSenha.innerHTML = mostrar
+            ? '<i class="bi bi-eye-slash" aria-hidden="true"></i>'
+            : '<i class="bi bi-eye" aria-hidden="true"></i>';
+        botaoSenha.setAttribute("aria-label", mostrar ? "Ocultar senha" : "Mostrar senha");
+        botaoSenha.title = mostrar ? "Ocultar senha" : "Mostrar senha";
+    });
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
