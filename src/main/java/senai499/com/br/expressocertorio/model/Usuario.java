@@ -1,7 +1,10 @@
+
 package senai499.com.br.expressocertorio.model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -13,15 +16,15 @@ import jakarta.validation.constraints.Size;
 
 @Entity
 @Table(
-        name = "clientes",
+        name = "usuarios",
         uniqueConstraints = {
                 @UniqueConstraint(
-                        name = "uk_clientes_email",
+                        name = "uk_usuarios_email",
                         columnNames = "email"
                 )
         }
 )
-public class Cliente {
+public class Usuario {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -43,9 +46,8 @@ public class Cliente {
     @Column(nullable = false, length = 255)
     private String senha;
 
-    @NotBlank(message = "O telefone é obrigatório.")
     @Size(max = 20)
-    @Column(nullable = false, length = 20)
+    @Column(length = 20)
     private String telefone;
 
     @NotBlank(message = "O CEP é obrigatório.")
@@ -82,8 +84,15 @@ public class Cliente {
     @Column(length = 100)
     private String complemento;
 
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false, length = 20)
+    private PerfilUsuario perfil = PerfilUsuario.CLIENTE;
+
+    @Column(nullable = false)
+    private boolean ativo = true;
+
     // Construtor vazio exigido pelo JPA
-    public Cliente() {
+    public Usuario() {
     }
 
     // Getters e setters
@@ -182,5 +191,21 @@ public class Cliente {
 
     public void setComplemento(String complemento) {
         this.complemento = complemento;
+    }
+
+    public PerfilUsuario getPerfil() {
+        return perfil;
+    }
+
+    public void setPerfil(PerfilUsuario perfil) {
+        this.perfil = perfil;
+    }
+
+    public boolean isAtivo() {
+        return ativo;
+    }
+
+    public void setAtivo(boolean ativo) {
+        this.ativo = ativo;
     }
 }

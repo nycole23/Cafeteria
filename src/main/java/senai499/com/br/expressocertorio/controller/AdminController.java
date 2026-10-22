@@ -10,14 +10,4 @@ public class AdminController {
         return "admin/administrativo";
     }
 
-    @GetMapping("/login")
-    public String login() {
-        return "admin/login";
-    }
-
-    @GetMapping("/criar-conta")
-    public String criarConta() {
-        return "admin/criar-conta";
-    }
-
 }
