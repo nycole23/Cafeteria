@@ -1,0 +1,746 @@
+
+/* =========================================================
+   EXPRESSO CERTÓRIO — CSS EXCLUSIVO DA PÁGINA DE PEDIDOS
+   ========================================================= */
+
+:root {
+    --pedido-creme: #F7F1E8;
+    --pedido-marrom: #3E2723;
+    --pedido-marrom-claro: #654438;
+    --pedido-dourado: #D99A45;
+    --pedido-dourado-claro: #F5D6A1;
+    --pedido-texto: #49352E;
+    --pedido-suave: #817168;
+    --pedido-borda: #E8DCCB;
+    --pedido-branco: #FFFDFA;
+}
+
+body {
+    background: var(--pedido-creme);
+}
+
+/* Cabeçalho */
+.pedidos-header {
+    position: relative;
+    overflow: hidden;
+    padding: clamp(52px, 7vw, 86px) 0;
+    color: #FFF9F0;
+    background:
+            radial-gradient(circle at 85% 15%, rgba(217, 154, 69, .22), transparent 32%),
+            linear-gradient(125deg, #2B1B18 0%, #3E2723 58%, #654438 100%);
+}
+
+.pedidos-header::after {
+    content: "";
+    position: absolute;
+    width: 270px;
+    height: 270px;
+    right: -90px;
+    bottom: -165px;
+    border: 1px solid rgba(245, 214, 161, .2);
+    border-radius: 50%;
+    box-shadow:
+            0 0 0 28px rgba(245, 214, 161, .035),
+            0 0 0 58px rgba(245, 214, 161, .025);
+    pointer-events: none;
+}
+
+.pedidos-header .pedidos-container {
+    position: relative;
+    z-index: 1;
+    width: min(1200px, 92%);
+    margin-inline: auto;
+}
+
+.pedidos-header .titulo-pedidos {
+    max-width: 720px;
+}
+
+.pedidos-header .titulo-pedidos > span {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+    color: var(--pedido-dourado-claro);
+    font-size: .76rem;
+    font-weight: 800;
+    letter-spacing: .19em;
+}
+
+.pedidos-header .titulo-pedidos > span::before {
+    content: "";
+    width: 28px;
+    height: 2px;
+    background: var(--pedido-dourado);
+}
+
+.pedidos-header .titulo-pedidos h1 {
+    margin: 0 0 15px;
+    color: #FFF9F0;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(2.25rem, 5vw, 3.65rem);
+    font-weight: 700;
+    letter-spacing: -.035em;
+    line-height: 1.08;
+}
+
+.pedidos-header .titulo-pedidos p {
+    max-width: 560px;
+    margin: 0;
+    color: rgba(255, 249, 240, .82);
+    font-size: 1.03rem;
+    line-height: 1.8;
+}
+
+/* Área principal */
+.pedido-area {
+    padding: clamp(30px, 5vw, 62px) 0 76px;
+    background: var(--pedido-creme);
+}
+
+.pedido-area .pedido-container {
+    display: grid;
+    grid-template-columns: minmax(0, 1.55fr) minmax(310px, .85fr);
+    align-items: start;
+    gap: clamp(22px, 3vw, 36px);
+    width: min(1200px, 92%);
+    margin-inline: auto;
+}
+
+.pedido-area .pedido-produtos {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    min-width: 0;
+}
+
+.pedido-area .categoria-pedido {
+    padding: clamp(18px, 2.5vw, 28px);
+    border: 1px solid var(--pedido-borda);
+    border-radius: 20px;
+    background: rgba(255, 253, 250, .94);
+    box-shadow: 0 10px 30px rgba(62, 39, 35, .055);
+}
+
+.pedido-area .categoria-pedido-titulo {
+    margin: 0 0 18px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid #EDE3D6;
+}
+
+.pedido-area .categoria-pedido-titulo > span {
+    display: block;
+    margin-bottom: 7px;
+    color: #A66A2C;
+    font-size: .72rem;
+    font-weight: 800;
+    letter-spacing: .16em;
+}
+
+.pedido-area .categoria-pedido-titulo h2 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0 0 7px;
+    color: var(--pedido-marrom);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(1.35rem, 2.4vw, 1.8rem);
+    font-weight: 700;
+}
+
+.pedido-area .categoria-pedido-titulo h2 i {
+    color: #8B512A;
+}
+
+.pedido-area .categoria-pedido-titulo p {
+    margin: 0;
+    color: var(--pedido-suave);
+    font-size: .9rem;
+    line-height: 1.65;
+}
+
+/* Produtos */
+.pedido-area .item-pedido {
+    display: grid;
+    grid-template-columns: 58px minmax(0, 1fr) minmax(95px, auto);
+    align-items: center;
+    gap: 16px;
+    padding: 18px 0;
+    border-bottom: 1px solid #F0E7DC;
+}
+
+.pedido-area .item-pedido:first-of-type {
+    padding-top: 4px;
+}
+
+.pedido-area .item-pedido:last-child {
+    padding-bottom: 2px;
+    border-bottom: 0;
+}
+
+.pedido-area .item-icone {
+    display: grid;
+    place-items: center;
+    width: 58px;
+    height: 58px;
+    border: 1px solid #EAD7BA;
+    border-radius: 17px;
+    color: #8B512A;
+    background: linear-gradient(145deg, #FFF8EB, #F3E3CA);
+    font-size: 1.55rem;
+}
+
+.pedido-area .item-info {
+    min-width: 0;
+}
+
+.pedido-area .item-info .categoria-produto {
+    display: inline-block;
+    margin-bottom: 4px;
+    color: #A66A2C;
+    font-size: .68rem;
+    font-weight: 800;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+}
+
+.pedido-area .item-info h3 {
+    margin: 0 0 5px;
+    color: var(--pedido-marrom);
+    font-size: 1rem;
+    font-weight: 750;
+    line-height: 1.4;
+}
+
+.pedido-area .item-info p {
+    margin: 0 0 7px;
+    color: var(--pedido-suave);
+    font-size: .86rem;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+}
+
+.pedido-area .item-info strong {
+    color: #8B512A;
+    font-size: .98rem;
+    font-weight: 800;
+}
+
+/* Quantidade */
+.pedido-area .quantidade {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 7px;
+}
+
+.pedido-area .quantidade label {
+    color: var(--pedido-suave);
+    font-size: .74rem;
+    font-weight: 700;
+}
+
+.pedido-area .quantidade-input {
+    width: 86px;
+    min-height: 42px;
+    padding: 8px 10px;
+    border: 1px solid #DCCBB8;
+    border-radius: 11px;
+    color: var(--pedido-marrom);
+    background: #FFFDFA;
+    font: inherit;
+    font-weight: 700;
+    text-align: center;
+    transition: border-color .2s ease, box-shadow .2s ease;
+}
+
+.pedido-area .quantidade-input:focus,
+.pedido-area .campo-pedido input:focus,
+.pedido-area .campo-pedido textarea:focus {
+    outline: none;
+    border-color: #C88B3D;
+    box-shadow: 0 0 0 4px rgba(217, 154, 69, .17);
+}
+
+/* Resumo do pedido */
+.pedido-area .resumo-pedido {
+    position: sticky;
+    top: 24px;
+    min-width: 0;
+    overflow: hidden;
+    border: 1px solid #E5D5C2;
+    border-radius: 20px;
+    background: var(--pedido-branco);
+    box-shadow: 0 18px 45px rgba(62, 39, 35, .09);
+}
+
+.pedido-area .resumo-topo {
+    padding: 24px 26px;
+    color: #FFF9F0;
+    background: linear-gradient(135deg, #654438, #3E2723);
+}
+
+.pedido-area .resumo-topo > i {
+    display: inline-block;
+    margin-right: 8px;
+    color: var(--pedido-dourado-claro);
+    font-size: 1.25rem;
+    vertical-align: middle;
+}
+
+.pedido-area .resumo-topo h2 {
+    display: inline;
+    margin: 0;
+    color: #FFF9F0;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.pedido-area .dados-pedido {
+    display: flex;
+    flex-direction: column;
+    gap: 17px;
+    padding: 24px;
+}
+
+.pedido-area .dados-pedido > h3 {
+    margin: 2px 0 0;
+    color: var(--pedido-marrom);
+    font-size: 1rem;
+    font-weight: 800;
+}
+
+.pedido-area .dados-pedido > h3 i {
+    margin-right: 6px;
+    color: #8B512A;
+}
+
+/* Campos do formulário */
+.pedido-area .campo-pedido {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.pedido-area .campo-pedido label {
+    color: #4A342C;
+    font-size: .82rem;
+    font-weight: 750;
+}
+
+.pedido-area .campo-pedido input,
+.pedido-area .campo-pedido textarea {
+    width: 100%;
+    min-height: 45px;
+    padding: 11px 13px;
+    border: 1px solid #E1D3C3;
+    border-radius: 10px;
+    color: var(--pedido-marrom);
+    background: #FFFEFC;
+    font: inherit;
+    font-size: .9rem;
+    transition: border-color .2s ease, box-shadow .2s ease;
+}
+
+.pedido-area .campo-pedido textarea {
+    min-height: 92px;
+    resize: vertical;
+}
+
+.pedido-area .campo-pedido input::placeholder,
+.pedido-area .campo-pedido textarea::placeholder {
+    color: #A99A8D;
+}
+
+/* Formas de pagamento */
+.pedido-area .pagamentos {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+}
+
+.pedido-area .pagamento-option {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    min-height: 43px;
+    padding: 9px 6px;
+    border: 1px solid #E1D3C3;
+    border-radius: 10px;
+    color: var(--pedido-marrom-claro);
+    background: #FFFEFC;
+    font-size: .78rem;
+    font-weight: 750;
+    cursor: pointer;
+    transition: border-color .2s ease, background .2s ease, color .2s ease;
+}
+
+.pedido-area .pagamento-option:has(input:checked) {
+    border-color: #B77B32;
+    color: var(--pedido-marrom);
+    background: #FFF2D9;
+    box-shadow: inset 0 0 0 1px #B77B32;
+}
+
+.pedido-area .pagamento-option input {
+    accent-color: #8B512A;
+}
+
+.pedido-area .pagamento-option span {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Total e botão */
+.pedido-area .total-pedido {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin: 4px 0 0;
+    padding: 17px;
+    border: 1px solid #EAD5B5;
+    border-radius: 13px;
+    background: linear-gradient(120deg, #FFF7E8, #F8E8CF);
+}
+
+.pedido-area .total-pedido span {
+    color: var(--pedido-marrom-claro);
+    font-size: .9rem;
+    font-weight: 750;
+}
+
+.pedido-area .total-pedido strong,
+.pedido-area .total-pedido #total {
+    color: var(--pedido-marrom);
+    font-size: 1.4rem;
+    font-weight: 850;
+    white-space: nowrap;
+}
+
+.pedido-area .aviso-pedido {
+    display: block;
+    margin-top: -8px;
+    color: var(--pedido-suave);
+    font-size: .77rem;
+    line-height: 1.6;
+}
+
+.pedido-area .btn-finalizar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    min-height: 51px;
+    padding: 14px 18px;
+    border: 0;
+    border-radius: 11px;
+    color: #FFF9F0;
+    background: linear-gradient(135deg, #79513A, #3E2723);
+    box-shadow: 0 8px 18px rgba(62, 39, 35, .18);
+    font: inherit;
+    font-size: .94rem;
+    font-weight: 800;
+    cursor: pointer;
+    transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+}
+
+.pedido-area .btn-finalizar:hover {
+    transform: translateY(-2px);
+    background: linear-gradient(135deg, #895E40, #4A2D26);
+    box-shadow: 0 12px 23px rgba(62, 39, 35, .24);
+}
+
+.pedido-area .btn-finalizar:focus-visible {
+    outline: 3px solid var(--pedido-dourado);
+    outline-offset: 3px;
+}
+
+.pedido-area .btn-finalizar:active {
+    transform: translateY(0);
+}
+
+/* Alertas do Bootstrap */
+main > section.container:has(.alert) {
+    max-width: 1200px;
+}
+
+main > section.container .alert {
+    border-radius: 12px;
+    box-shadow: 0 5px 18px rgba(62, 39, 35, .04);
+}
+
+/* Tablets */
+@media (max-width: 980px) {
+    .pedido-area .pedido-container {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .pedido-area .resumo-pedido {
+        position: static;
+    }
+}
+
+/* Celulares */
+@media (max-width: 600px) {
+    .pedidos-header {
+        padding: 48px 0 44px;
+    }
+
+    .pedidos-header .titulo-pedidos p {
+        font-size: .94rem;
+    }
+
+    .pedido-area .pedido-container {
+        width: 94%;
+        gap: 20px;
+    }
+
+    .pedido-area .categoria-pedido {
+        padding: 17px 14px;
+        border-radius: 16px;
+    }
+
+    .pedido-area .item-pedido {
+        grid-template-columns: 44px minmax(0, 1fr);
+        gap: 12px;
+        align-items: start;
+        padding: 16px 0;
+    }
+
+    .pedido-area .item-icone {
+        width: 44px;
+        height: 44px;
+        border-radius: 13px;
+        font-size: 1.25rem;
+    }
+
+    .pedido-area .quantidade {
+        grid-column: 2;
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+        margin-top: -2px;
+    }
+
+    .pedido-area .quantidade-input {
+        width: 78px;
+        min-height: 38px;
+    }
+
+    .pedido-area .resumo-topo {
+        padding: 20px;
+    }
+
+    .pedido-area .dados-pedido {
+        padding: 20px 16px;
+    }
+
+    .pedido-area .pagamentos {
+        gap: 6px;
+    }
+
+    .pedido-area .pagamento-option {
+        flex-wrap: wrap;
+        font-size: .72rem;
+    }
+}
+
+/* Respeita preferência por menos animações */
+@media (prefers-reduced-motion: reduce) {
+    .pedido-area .btn-finalizar,
+    .pedido-area .pagamento-option,
+    .pedido-area .quantidade-input,
+    .pedido-area .campo-pedido input,
+    .pedido-area .campo-pedido textarea {
+        transition: none;
+    }
+}
+/* =========================================================
+   FOOTER - EXPRESSO CERTÓRIO
+   ========================================================= */
+.pedidos-footer {
+    position: relative;
+    overflow: hidden;
+    margin-top: 0;
+    background:
+            radial-gradient(circle at 10% 0%, rgba(217, 154, 69, .18), transparent 35%),
+            linear-gradient(135deg, #2B1B18 0%, #3E2723 60%, #4A342C 100%);
+    color: #FFF9F0;
+}
+
+.pedidos-footer::before {
+    content: "";
+    position: absolute;
+    width: 420px;
+    height: 420px;
+    right: -120px;
+    top: -140px;
+    border: 1px solid rgba(245, 214, 161, .14);
+    border-radius: 50%;
+    box-shadow:
+            0 0 0 30px rgba(245, 214, 161, .03),
+            0 0 0 70px rgba(245, 214, 161, .02);
+    pointer-events: none;
+}
+
+.pedidos-footer-container {
+    position: relative;
+    z-index: 2;
+    width: min(1200px, 92%);
+    margin: auto;
+    padding: 58px 0 28px;
+}
+
+.pedidos-footer-grid {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr 1fr 1.2fr;
+    gap: 36px;
+    padding-bottom: 42px;
+    border-bottom: 1px solid rgba(245, 214, 161, .15);
+}
+
+/* Marca */
+.footer-marca-logo {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    margin-bottom: 16px;
+    color: var(--pedido-dourado-claro);
+    font-family: Georgia, serif;
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: .04em;
+    text-decoration: none;
+}
+
+.footer-marca-logo i {
+    color: var(--pedido-dourado);
+}
+
+.footer-marca p {
+    max-width: 340px;
+    margin: 0 0 22px;
+    color: rgba(255, 249, 240, .72);
+    font-size: .92rem;
+    line-height: 1.8;
+}
+
+/* Titulos */
+.pedidos-footer-col h4 {
+    margin: 0 0 18px;
+    color: var(--pedido-dourado-claro);
+    font-size: .95rem;
+    font-weight: 800;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+}
+
+/* Links */
+.pedidos-footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+}
+
+.pedidos-footer-links a {
+    color: rgba(255, 249, 240, .72);
+    font-size: .88rem;
+    text-decoration: none;
+    transition: .2s ease;
+}
+
+.pedidos-footer-links a:hover {
+    color: var(--pedido-dourado-claro);
+    transform: translateX(4px);
+}
+
+/* Contato */
+.footer-contato li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+    color: rgba(255, 249, 240, .72);
+    font-size: .88rem;
+    list-style: none;
+}
+
+.footer-contato li i {
+    width: 32px;
+    height: 32px;
+    display: grid;
+    place-items: center;
+    background: rgba(245, 214, 161, .10);
+    border: 1px solid rgba(245, 214, 161, .15);
+    border-radius: 50%;
+    color: var(--pedido-dourado);
+    font-size: 14px;
+}
+
+/* Social */
+.footer-social {
+    display: flex;
+    gap: 10px;
+    margin-top: 18px;
+}
+
+.footer-social a {
+    width: 40px;
+    height: 40px;
+    display: grid;
+    place-items: center;
+    background: rgba(255, 253, 250, .06);
+    border: 1px solid rgba(245, 214, 161, .15);
+    border-radius: 50%;
+    color: var(--pedido-dourado-claro);
+    text-decoration: none;
+    transition: .25s ease;
+}
+
+.footer-social a:hover {
+    background: var(--pedido-dourado);
+    color: var(--pedido-marrom);
+    transform: translateY(-3px);
+}
+
+/* Bottom */
+.pedidos-footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    padding-top: 24px;
+    color: rgba(255, 249, 240, .45);
+    font-size: .82rem;
+}
+
+.pedidos-footer-bottom strong {
+    color: var(--pedido-dourado-claro);
+    font-weight: 700;
+}
+
+/* RESPONSIVO */
+@media (max-width: 980px) {
+    .pedidos-footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .pedidos-footer-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    .pedidos-footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+}

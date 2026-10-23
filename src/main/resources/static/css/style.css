@@ -29,13 +29,13 @@ body {
 
 .navbar-custom {
     background: linear-gradient(135deg,
-            #3E2723,
-            #4D3029);
+    #3E2723,
+    #4D3029);
 
     min-height: 80px;
 
     box-shadow:
-        0 5px 20px rgba(43, 27, 24, 0.20);
+            0 5px 20px rgba(43, 27, 24, 0.20);
 
     position: relative;
     z-index: 1000;
@@ -105,9 +105,9 @@ body {
     border-radius: 9px;
 
     transition:
-        background-color 0.3s ease,
-        color 0.3s ease,
-        transform 0.3s ease;
+            background-color 0.3s ease,
+            color 0.3s ease,
+            transform 0.3s ease;
 }
 
 .navbar-nav .nav-link:hover {
@@ -124,7 +124,7 @@ body {
     color: #3E2723;
 
     box-shadow:
-        0 4px 12px rgba(217, 154, 69, 0.20);
+            0 4px 12px rgba(217, 154, 69, 0.20);
 }
 
 
@@ -167,7 +167,7 @@ body {
     overflow: hidden;
 
     box-shadow:
-        0 15px 40px rgba(62, 39, 35, 0.18);
+            0 15px 40px rgba(62, 39, 35, 0.18);
 }
 
 .carousel-item {
@@ -184,7 +184,7 @@ body {
     inset: 0;
 
     background:
-        linear-gradient(to top,
+            linear-gradient(to top,
             rgba(35, 20, 17, 0.72),
             rgba(35, 20, 17, 0.05) 65%);
 
@@ -440,12 +440,12 @@ body {
     overflow: hidden;
 
     box-shadow:
-        0 6px 20px rgba(62, 39, 35, 0.10);
+            0 6px 20px rgba(62, 39, 35, 0.10);
 
     transition:
-        transform 0.35s ease,
-        box-shadow 0.35s ease,
-        border-color 0.35s ease;
+            transform 0.35s ease,
+            box-shadow 0.35s ease,
+            border-color 0.35s ease;
 }
 
 .produto:hover {
@@ -454,7 +454,7 @@ body {
     border-color: #D8B78B;
 
     box-shadow:
-        0 16px 35px rgba(62, 39, 35, 0.18);
+            0 16px 35px rgba(62, 39, 35, 0.18);
 }
 
 
@@ -478,7 +478,7 @@ body {
     object-fit: cover;
 
     transition:
-        transform 0.5s ease;
+            transform 0.5s ease;
 }
 
 .produto:hover .produto-imagem {
@@ -608,10 +608,10 @@ body {
     font-weight: bold;
 
     transition:
-        background-color 0.3s ease,
-        color 0.3s ease,
-        transform 0.3s ease,
-        box-shadow 0.3s ease;
+            background-color 0.3s ease,
+            color 0.3s ease,
+            transform 0.3s ease,
+            box-shadow 0.3s ease;
 }
 
 .btn-pedir:hover {
@@ -622,7 +622,7 @@ body {
     transform: translateY(-2px);
 
     box-shadow:
-        0 5px 12px rgba(217, 154, 69, 0.25);
+            0 5px 12px rgba(217, 154, 69, 0.25);
 }
 
 
@@ -644,7 +644,7 @@ body {
     padding: 42px 45px;
 
     background:
-        linear-gradient(135deg,
+            linear-gradient(135deg,
             #3E2723,
             #654438);
 
@@ -653,7 +653,7 @@ body {
     color: #FFFFFF;
 
     box-shadow:
-        0 12px 30px rgba(62, 39, 35, 0.18);
+            0 12px 30px rgba(62, 39, 35, 0.18);
 }
 
 .destaque-texto {
@@ -722,7 +722,7 @@ body {
     font-size: 52px;
 
     box-shadow:
-        0 8px 20px rgba(0, 0, 0, 0.15);
+            0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 
@@ -750,14 +750,14 @@ body {
     padding: 42px 45px;
 
     background:
-        linear-gradient(135deg,
+            linear-gradient(135deg,
             #3E2723,
             #654438);
 
     border-radius: 22px;
 
     box-shadow:
-        0 12px 30px rgba(62, 39, 35, 0.18);
+            0 12px 30px rgba(62, 39, 35, 0.18);
 }
 
 .pedido-texto {
@@ -872,7 +872,7 @@ body {
     padding: 80px 20px 90px;
 
     background:
-        linear-gradient(180deg,
+            linear-gradient(180deg,
             #F7F1E8 0%,
             #F3E5D2 100%);
 
@@ -960,12 +960,12 @@ body {
     border-radius: 20px;
 
     box-shadow:
-        0 10px 28px rgba(62, 39, 35, 0.12);
+            0 10px 28px rgba(62, 39, 35, 0.12);
 
     transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease,
-        border-color 0.3s ease;
+            transform 0.3s ease,
+            box-shadow 0.3s ease,
+            border-color 0.3s ease;
 }
 
 .conta-card:hover {
@@ -974,7 +974,7 @@ body {
     border-color: #D8B78B;
 
     box-shadow:
-        0 16px 35px rgba(62, 39, 35, 0.18);
+            0 16px 35px rgba(62, 39, 35, 0.18);
 }
 
 
@@ -982,7 +982,7 @@ body {
 
 .destaque-conta {
     background:
-        linear-gradient(145deg,
+            linear-gradient(145deg,
             #3E2723,
             #5B3B31);
 
@@ -1023,7 +1023,7 @@ body {
     font-size: 27px;
 
     box-shadow:
-        0 5px 12px rgba(62, 39, 35, 0.10);
+            0 5px 12px rgba(62, 39, 35, 0.10);
 }
 
 
@@ -1133,8 +1133,8 @@ body {
     font-size: 14px;
 
     transition:
-        border-color 0.3s ease,
-        box-shadow 0.3s ease;
+            border-color 0.3s ease,
+            box-shadow 0.3s ease;
 }
 
 .input-conta input::placeholder {
@@ -1145,7 +1145,7 @@ body {
     border-color: #D99A45;
 
     box-shadow:
-        0 0 0 3px rgba(217, 154, 69, 0.18);
+            0 0 0 3px rgba(217, 154, 69, 0.18);
 }
 
 
@@ -1185,10 +1185,10 @@ body {
     cursor: pointer;
 
     transition:
-        background-color 0.3s ease,
-        color 0.3s ease,
-        transform 0.3s ease,
-        box-shadow 0.3s ease;
+            background-color 0.3s ease,
+            color 0.3s ease,
+            transform 0.3s ease,
+            box-shadow 0.3s ease;
 }
 
 .btn-conta:hover {
@@ -1199,7 +1199,7 @@ body {
     transform: translateY(-2px);
 
     box-shadow:
-        0 6px 15px rgba(62, 39, 35, 0.18);
+            0 6px 15px rgba(62, 39, 35, 0.18);
 }
 
 .destaque-conta .btn-conta {
@@ -1244,8 +1244,8 @@ body {
     pointer-events: none;
 
     transition:
-        opacity 0.3s ease,
-        visibility 0.3s ease;
+            opacity 0.3s ease,
+            visibility 0.3s ease;
 }
 
 
@@ -1279,12 +1279,12 @@ body {
     text-align: center;
 
     box-shadow:
-        0 20px 60px rgba(43, 27, 24, 0.30);
+            0 20px 60px rgba(43, 27, 24, 0.30);
 
     transform: translateY(-20px) scale(0.96);
 
     transition:
-        transform 0.3s ease;
+            transform 0.3s ease;
 }
 
 
@@ -1319,7 +1319,7 @@ body {
     font-size: 38px;
 
     box-shadow:
-        0 8px 20px rgba(62, 39, 35, 0.12);
+            0 8px 20px rgba(62, 39, 35, 0.12);
 }
 
 
@@ -1393,9 +1393,9 @@ body {
     font-weight: bold;
 
     transition:
-        background-color 0.3s ease,
-        color 0.3s ease,
-        transform 0.3s ease;
+            background-color 0.3s ease,
+            color 0.3s ease,
+            transform 0.3s ease;
 }
 
 
@@ -1500,7 +1500,7 @@ body {
     align-items: center;
 
     background:
-        linear-gradient(90deg,
+            linear-gradient(90deg,
             rgba(62, 39, 35, 0.97) 0%,
             rgba(62, 39, 35, 0.90) 48%,
             rgba(62, 39, 35, 0.72) 100%);
@@ -1710,7 +1710,7 @@ body {
     overflow: hidden;
 
     box-shadow:
-        0 18px 40px rgba(62, 39, 35, 0.18);
+            0 18px 40px rgba(62, 39, 35, 0.18);
 
 }
 
@@ -1774,7 +1774,7 @@ body {
     flex-direction: column;
 
     box-shadow:
-        0 10px 25px rgba(43, 27, 24, 0.20);
+            0 10px 25px rgba(43, 27, 24, 0.20);
 
 }
 
@@ -1930,11 +1930,11 @@ body {
     text-align: center;
 
     box-shadow:
-        0 8px 25px rgba(62, 39, 35, 0.08);
+            0 8px 25px rgba(62, 39, 35, 0.08);
 
     transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease;
+            transform 0.3s ease,
+            box-shadow 0.3s ease;
 
 }
 
@@ -1944,7 +1944,7 @@ body {
     transform: translateY(-6px);
 
     box-shadow:
-        0 15px 35px rgba(62, 39, 35, 0.14);
+            0 15px 35px rgba(62, 39, 35, 0.14);
 
 }
 
@@ -2083,7 +2083,7 @@ body {
     border-radius: 22px;
 
     box-shadow:
-        0 12px 35px rgba(62, 39, 35, 0.10);
+            0 12px 35px rgba(62, 39, 35, 0.10);
 
 }
 
@@ -2337,6 +2337,206 @@ body {
     overflow-wrap: anywhere;
 }
 
+/* =========================================
+   FOOTER - CORRIGIDO
+========================================= */
+.footer {
+    background: linear-gradient(135deg, #3E2723, #2B1B18);
+    color: #F8EEE5;
+    margin-top: 60px;
+    position: relative;
+    overflow: hidden;
+}
+
+.footer::before {
+    content: "";
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    right: -100px;
+    top: -100px;
+    border: 1px solid rgba(245, 214, 161, 0.12);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.footer-container {
+    width: min(1200px, 92%);
+    margin: auto;
+    padding: 55px 0 25px;
+    position: relative;
+    z-index: 2;
+}
+
+.footer-top {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+    gap: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(245, 214, 161, 0.15);
+}
+
+/* COLUNAS */
+.footer-col h4 {
+    margin: 0 0 18px;
+    color: #F5D6A1;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+.footer-col p {
+    margin: 0;
+    color: #E8D8C7;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+/* LOGO DO FOOTER */
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    margin-bottom: 16px;
+    color: #F5D6A1;
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    text-decoration: none;
+}
+
+.footer-logo i {
+    color: #D99A45;
+    font-size: 28px;
+}
+
+/* LINKS */
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-links a {
+    color: #E8D8C7;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.footer-links a:hover {
+    color: #F5D6A1;
+    transform: translateX(4px);
+}
+
+.footer-links a::before {
+    content: "›";
+    color: #D99A45;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.footer-links a:hover::before {
+    opacity: 1;
+}
+
+/* CONTATO / SOCIAL */
+.footer-contato-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+    color: #E8D8C7;
+    font-size: 14px;
+}
+
+.footer-contato-item i {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(217, 154, 69, 0.15);
+    border-radius: 50%;
+    color: #D99A45;
+    font-size: 14px;
+}
+
+.footer-social {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.footer-social a {
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(245, 214, 161, 0.10);
+    border: 1px solid rgba(245, 214, 161, 0.15);
+    border-radius: 50%;
+    color: #F5D6A1;
+    text-decoration: none;
+    font-size: 16px;
+    transition: 0.3s ease;
+}
+
+.footer-social a:hover {
+    background: #D99A45;
+    color: #3E2723;
+    transform: translateY(-3px);
+}
+
+/* RODAPÉ FINAL */
+.footer-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding-top: 25px;
+    color: #A89589;
+    font-size: 13px;
+}
+
+.footer-bottom a {
+    color: #DDBB89;
+    text-decoration: none;
+}
+
+.footer-bottom a:hover {
+    color: #F5D6A1;
+    text-decoration: underline;
+}
+
+/* =========================================
+   RESPONSIVO DO FOOTER
+========================================= */
+@media (max-width: 992px) {
+    .footer-top {
+        grid-template-columns: 1fr 1fr;
+        gap: 35px;
+    }
+}
+
+@media (max-width: 600px) {
+    .footer-top {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
 @media (max-width: 1000px) {
     .produtos {
         grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -2355,59 +2555,5 @@ body {
 
     .categoria-secao > .titulo-secao h2 {
         font-size: 25px;
-    }
-}
-
-/* RODAPÉ */
-footer {
-    width: 100%;
-    background-color: #2B1B18;
-    color: #F7F1E8;
-    padding: 25px 5%;
-    margin-top: 50px;
-}
-
-.footer-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-.footer-content p {
-    margin: 0;
-    font-size: 14px;
-    line-height: 1.6;
-}
-
-.footer-icons {
-    display: flex;
-    align-items: center;
-    gap: 18px;
-}
-
-.footer-icons a {
-    color: #F5D6A1;
-    font-size: 22px;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.footer-icons a:hover {
-    color: #D99A45;
-}
-
-/* RODAPÉ EM TELAS PEQUENAS */
-@media (max-width: 600px) {
-    .footer-content {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .footer-icons {
-        justify-content: center;
     }
 }
