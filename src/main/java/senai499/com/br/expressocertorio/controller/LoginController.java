@@ -1,33 +1,31 @@
 
 package senai499.com.br.expressocertorio.controller;
 
+import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import senai499.com.br.expressocertorio.model.Usuario;
 import senai499.com.br.expressocertorio.repository.UsuarioRepository;
-import jakarta.servlet.http.HttpServletRequest;
 
 @Controller
 public class LoginController {
 
     private final UsuarioRepository usuarioRepository;
-    private final BCryptPasswordEncoder passwordEncoder =
-            new BCryptPasswordEncoder();
+    private final BCryptPasswordEncoder passwordEncoder;
 
     public LoginController(UsuarioRepository usuarioRepository) {
         this.usuarioRepository = usuarioRepository;
+        this.passwordEncoder = new BCryptPasswordEncoder();
     }
 
-    // Exibe a tela de login
+    // Exibe a tela de login.
     @GetMapping("/login")
     public String exibirLogin(
             @RequestParam(required = false) String erro,
@@ -35,6 +33,7 @@ public class LoginController {
             Model model,
             HttpSession session) {
 
+        // Se já estiver autenticado, direciona para a área correspondente.
         if (session.getAttribute("usuarioId") != null) {
             return redirecionarPorPerfil(
                     (String) session.getAttribute("usuarioPerfil")
@@ -55,59 +54,60 @@ public class LoginController {
         return "admin/login";
     }
 
-    // Processa o login
-
+    // Processa as credenciais enviadas pelo formulário.
     @PostMapping("/login")
     public String realizarLogin(
             @RequestParam String email,
             @RequestParam String senha,
-            HttpServletRequest request,
-            RedirectAttributes redirectAttributes) {
+            HttpServletRequest request) {
+
+        if (email == null || email.isBlank()
+                || senha == null || senha.isBlank()) {
+            return "redirect:/login?erro";
+        }
 
         Usuario usuario = usuarioRepository
                 .findByEmailIgnoreCase(email.trim())
                 .orElse(null);
 
-        // Verifica se o usuário existe e está ativo.
+        // Confere se a conta existe e está ativa.
         if (usuario == null || !usuario.isAtivo()) {
             return "redirect:/login?erro";
         }
 
-        // Compara a senha informada com a senha criptografada.
+        // Compara a senha digitada com o hash armazenado no banco.
         if (usuario.getSenha() == null
                 || !passwordEncoder.matches(senha, usuario.getSenha())) {
             return "redirect:/login?erro";
         }
 
-        // Invalida a sessão anterior, se existir.
+        // Invalida a sessão anterior, se houver.
         HttpSession sessaoAntiga = request.getSession(false);
 
         if (sessaoAntiga != null) {
             sessaoAntiga.invalidate();
         }
 
-        // Cria uma nova sessão válida.
+        // Cria uma nova sessão após a autenticação.
         HttpSession novaSessao = request.getSession(true);
 
-        // Armazena os dados do usuário autenticado.
         novaSessao.setAttribute("usuarioId", usuario.getId());
         novaSessao.setAttribute("usuarioNome", usuario.getNome());
         novaSessao.setAttribute("usuarioEmail", usuario.getEmail());
         novaSessao.setAttribute("usuarioPerfil", usuario.getPerfil().name());
 
-        // Redireciona conforme o perfil.
+        // Direciona conforme o perfil do usuário.
         return redirecionarPorPerfil(usuario.getPerfil().name());
     }
 
-
-    // Encerra a sessão
+    // Encerra a sessão.
     @PostMapping("/logout")
     public String logout(HttpSession session) {
         session.invalidate();
         return "redirect:/login";
     }
 
-    // Direciona cada perfil para sua área
+    // Define a página inicial de cada perfil.
     private String redirecionarPorPerfil(String perfil) {
 
         if (perfil == null) {
@@ -127,20 +127,5 @@ public class LoginController {
             default:
                 return "redirect:/login";
         }
-    }
-
-    /*
-     * O container cria uma nova sessão quando getSession()
-     * é chamado após invalidar a sessão anterior.
-     */
-    private HttpSession criarNovaSessao(HttpSession sessaoAnterior) {
-        return sessaoAnterior.getServletContext() == null
-                ? sessaoAnterior
-                : obterNovaSessao(sessaoAnterior);
-    }
-
-    private HttpSession obterNovaSessao(HttpSession sessaoAnterior) {
-        // Este método será substituído pela criação correta da sessão.
-        return sessaoAnterior;
     }
 }
